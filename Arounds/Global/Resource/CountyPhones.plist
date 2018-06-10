@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Armenia</key>
+	<dict>
+		<key>pasholder</key>
+		<string>__ ___-___</string>
+		<key>callingCode</key>
+		<string>+374</string>
+		<key>affineFormat</key>
+		<string>([__]) [___] ] [___]</string>
+		<key>countyCode</key>
+		<string>am</string>
+	</dict>
+	<key>Russia</key>
+	<dict>
+		<key>pasholder</key>
+		<string>___ ___-__-__</string>
+		<key>callingCode</key>
+		<string>+7</string>
+		<key>affineFormat</key>
+		<string>([___]) [___] [__] [__]</string>
+		<key>countyCode</key>
+		<string>ru</string>
+	</dict>
+</dict>
+</plist>

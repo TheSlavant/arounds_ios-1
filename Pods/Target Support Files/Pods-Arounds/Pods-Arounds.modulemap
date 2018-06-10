@@ -1,0 +1,6 @@
+framework module Pods_Arounds {
+  umbrella header "Pods-Arounds-umbrella.h"
+
+  export *
+  module * { export * }
+}

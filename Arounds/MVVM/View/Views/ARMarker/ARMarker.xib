@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ARMarker" customModule="Arounds" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="markerShadow" translatesAutoresizingMaskIntoConstraints="NO" id="qz1-D5-oWA">
+                    <rect key="frame" x="0.0" y="-1" width="100" height="100"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="qz1-D5-oWA" secondAttribute="height" multiplier="1:1" id="DrS-v7-xnc"/>
+                    </constraints>
+                </imageView>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0oh-oQ-IaQ">
+                    <rect key="frame" x="24.5" y="21.5" width="35" height="35"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dK1-7S-jOH" customClass="ARRoundedImageView" customModule="Arounds" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" red="0.95294117647058818" green="0.31764705882352939" blue="0.098039215686274508" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="dK1-7S-jOH" firstAttribute="leading" secondItem="0oh-oQ-IaQ" secondAttribute="leading" id="AQ0-j9-gnd"/>
+                        <constraint firstItem="dK1-7S-jOH" firstAttribute="top" secondItem="0oh-oQ-IaQ" secondAttribute="top" id="Fc9-Ov-DhJ"/>
+                        <constraint firstAttribute="trailing" secondItem="dK1-7S-jOH" secondAttribute="trailing" id="Lt5-F4-Odb"/>
+                        <constraint firstAttribute="bottom" secondItem="dK1-7S-jOH" secondAttribute="bottom" id="Sju-2O-NJV"/>
+                        <constraint firstAttribute="width" secondItem="0oh-oQ-IaQ" secondAttribute="height" multiplier="1:1" id="Z2z-qN-YSn"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="qz1-D5-oWA" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" constant="-1" id="7SG-eJ-YH0"/>
+                <constraint firstItem="0oh-oQ-IaQ" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.35" id="7cZ-wS-2pq"/>
+                <constraint firstItem="qz1-D5-oWA" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="JhX-mm-nim"/>
+                <constraint firstItem="qz1-D5-oWA" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="box-vj-Y9G"/>
+                <constraint firstItem="0oh-oQ-IaQ" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" constant="-8" id="jhy-db-2cL"/>
+                <constraint firstItem="0oh-oQ-IaQ" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" constant="-11" id="o9j-jg-mC2"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="imageView" destination="dK1-7S-jOH" id="Xmh-Ut-59c"/>
+                <outlet property="shadowView" destination="0oh-oQ-IaQ" id="J2W-mX-p4i"/>
+            </connections>
+            <point key="canvasLocation" x="8" y="131"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="markerShadow" width="405" height="410"/>
+    </resources>
+</document>

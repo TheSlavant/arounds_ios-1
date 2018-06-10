@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="MontserratAlternates-Bold.ttf">
+            <string>MontserratAlternates-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--PrivacyVC-->
+        <scene sceneID="Iy2-7E-dgD">
+            <objects>
+                <viewController storyboardIdentifier="PrivacyVC" id="Xd6-o6-Ja7" customClass="PrivacyVC" customModule="Arounds" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ec7-g9-qua">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowBack" translatesAutoresizingMaskIntoConstraints="NO" id="PEQ-rM-Lrb">
+                                <rect key="frame" x="20" y="40" width="20" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="rOC-gc-cwR"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dzF-44-hOk">
+                                <rect key="frame" x="20" y="30" width="52" height="35"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="52" id="Brk-eI-Mcm"/>
+                                    <constraint firstAttribute="height" constant="35" id="tpA-pu-XEq"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="-46" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickButtonBack:" destination="Xd6-o6-Ja7" eventType="touchUpInside" id="tQp-PE-cjN"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HRL-ha-phe">
+                                <rect key="frame" x="0.0" y="70" width="375" height="930"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J0k-oG-cS5">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="694"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Политика конфиденциальности" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z64-RV-510">
+                                                <rect key="frame" x="20" y="0.0" width="335" height="59"/>
+                                                <fontDescription key="fontDescription" name="MontserratAlternates-Bold" family="Montserrat Alternates" pointSize="24"/>
+                                                <color key="textColor" red="0.30980392156862746" green="0.30980392156862746" blue="0.43529411764705883" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c49-FO-NR7">
+                                                <rect key="frame" x="20" y="94" width="335" height="600"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="600" id="30q-F7-eon"/>
+                                                </constraints>
+                                                <mutableString key="text">Вот. Все таки Я есть. Я существую. Обо мне говорят кругом. Я самая наиважнейшая деталь 
+в механизме этого мира. Если есть, значит, 
+все-таки это кому-то нужно, не правда ли?
+
+Вот. Все таки Я есть. Я существую. Обо мне говорят кругом. Я самая наиважнейшая деталь 
+в механизме этого мира. Если есть, значит, 
+все-таки это кому-то нужно, не правда ли?
+Вот. Все таки Я есть. Я существую. Обо мне говорят кругом. Я самая наиважнейшая деталь 
+в механизме этого мира. Если есть, значит, 
+все-таки это кому-то нужно, не правда ли?
+
+Вот. Все таки Я есть. Я существую. Обо мне говорят кругом. Я самая наиважнейшая деталь 
+в механизме этого мира. Если есть, значит, 
+все-таки это кому-то нужно, не правда ли?Вот. Все таки Я есть. Я существую. Обо мне говорят кругом. Я самая наиважнейшая деталь 
+в механизме этого мира. Если есть, значит, 
+все-таки это кому-то нужно, не правда ли?</mutableString>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="c49-FO-NR7" firstAttribute="leading" secondItem="z64-RV-510" secondAttribute="leading" id="5TY-C6-gtv"/>
+                                            <constraint firstItem="c49-FO-NR7" firstAttribute="top" secondItem="z64-RV-510" secondAttribute="bottom" constant="35" id="9aD-ix-L5v"/>
+                                            <constraint firstItem="z64-RV-510" firstAttribute="leading" secondItem="J0k-oG-cS5" secondAttribute="leading" constant="20" id="Hnm-IN-OZu"/>
+                                            <constraint firstItem="z64-RV-510" firstAttribute="top" secondItem="J0k-oG-cS5" secondAttribute="top" id="cRq-7Q-zHp"/>
+                                            <constraint firstAttribute="trailing" secondItem="z64-RV-510" secondAttribute="trailing" constant="20" id="eDS-bw-JSt"/>
+                                            <constraint firstItem="c49-FO-NR7" firstAttribute="trailing" secondItem="z64-RV-510" secondAttribute="trailing" id="uLk-eE-4P4"/>
+                                            <constraint firstAttribute="bottom" secondItem="c49-FO-NR7" secondAttribute="bottom" id="vFY-jf-0si"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="J0k-oG-cS5" firstAttribute="leading" secondItem="HRL-ha-phe" secondAttribute="leading" id="8lv-vT-Exo"/>
+                                    <constraint firstItem="J0k-oG-cS5" firstAttribute="width" secondItem="HRL-ha-phe" secondAttribute="width" id="P4D-nE-PAQ"/>
+                                    <constraint firstItem="J0k-oG-cS5" firstAttribute="top" secondItem="HRL-ha-phe" secondAttribute="top" id="cvn-gC-xk3"/>
+                                    <constraint firstAttribute="trailing" secondItem="J0k-oG-cS5" secondAttribute="trailing" id="fQa-rP-QZZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="J0k-oG-cS5" secondAttribute="bottom" id="ibS-P0-tl1"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dzF-44-hOk" firstAttribute="leading" secondItem="Udb-zg-Bur" secondAttribute="leading" constant="20" id="320-lf-lar"/>
+                            <constraint firstItem="HRL-ha-phe" firstAttribute="leading" secondItem="Udb-zg-Bur" secondAttribute="leading" id="EGW-xl-9Sc"/>
+                            <constraint firstItem="HRL-ha-phe" firstAttribute="top" secondItem="dzF-44-hOk" secondAttribute="bottom" constant="5" id="Z8i-fP-FBM"/>
+                            <constraint firstItem="PEQ-rM-Lrb" firstAttribute="leading" secondItem="dzF-44-hOk" secondAttribute="leading" id="j2R-mD-Z14"/>
+                            <constraint firstItem="Udb-zg-Bur" firstAttribute="bottom" secondItem="HRL-ha-phe" secondAttribute="bottom" id="mby-DS-BD6"/>
+                            <constraint firstItem="PEQ-rM-Lrb" firstAttribute="centerY" secondItem="dzF-44-hOk" secondAttribute="centerY" id="oP9-iK-5Cm"/>
+                            <constraint firstItem="Udb-zg-Bur" firstAttribute="trailing" secondItem="HRL-ha-phe" secondAttribute="trailing" id="otV-ro-Oj0"/>
+                            <constraint firstItem="dzF-44-hOk" firstAttribute="top" secondItem="Udb-zg-Bur" secondAttribute="top" constant="10" id="rTp-K1-srI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Udb-zg-Bur"/>
+                    </view>
+                    <size key="freeformSize" width="375" height="1000"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kz2-wo-05h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="350" y="-111"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrowBack" width="20" height="15"/>
+    </resources>
+</document>
