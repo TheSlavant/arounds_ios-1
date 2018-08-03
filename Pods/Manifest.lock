@@ -2,7 +2,12 @@ PODS:
   - Alamofire (4.7.2)
   - AlamofireImage (3.3.1):
     - Alamofire (~> 4.5)
+  - ALCameraViewController (3.0.3)
+  - Crashlytics (3.10.2):
+    - Fabric (~> 1.7.7)
+  - CropViewController (2.3.7)
   - DatePickerDialog (2.0)
+  - Fabric (1.7.7)
   - Firebase/Auth (4.13.0):
     - Firebase/Core
     - FirebaseAuth (= 4.6.1)
@@ -15,6 +20,9 @@ PODS:
   - Firebase/Messaging (4.13.0):
     - Firebase/Core
     - FirebaseMessaging (= 2.2.0)
+  - Firebase/Storage (4.13.0):
+    - Firebase/Core
+    - FirebaseStorage (= 2.2.0)
   - FirebaseAnalytics (4.2.0):
     - FirebaseCore (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
@@ -38,6 +46,10 @@ PODS:
     - FirebaseInstanceID (~> 2.0)
     - GoogleToolboxForMac/Logger (~> 2.1)
     - Protobuf (~> 3.5)
+  - FirebaseStorage (2.2.0):
+    - FirebaseAnalytics (~> 4.1)
+    - FirebaseCore (~> 4.0)
+    - GTMSessionFetcher/Core (~> 1.1)
   - GCCountryPicker (2.3.0)
   - GeoFire (2.0.1):
     - Firebase/Database (~> 4.0)
@@ -63,42 +75,65 @@ PODS:
   - GTMSessionFetcher/Core (1.1.15)
   - InputMask (3.4.0)
   - IQKeyboardManagerSwift (6.0.3)
+  - JSQMessagesViewController (7.3.5):
+    - JSQSystemSoundPlayer (~> 2.0.1)
+  - JSQSystemSoundPlayer (2.0.1)
+  - Just (0.6.0)
+  - Kingfisher (4.8.0)
+  - KMPlaceholderTextView (1.3.0)
   - leveldb-library (1.20)
-  - MBPhotoPicker (0.2.3)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - Presentr (1.3.2)
   - Protobuf (3.5.0)
-  - RangeSeekSlider (1.8.0)
   - SVProgressHUD (2.2.5)
   - SwiftyJSON (4.1.0)
+  - SwiftyRSA (1.4.0):
+    - SwiftyRSA/ObjC (= 1.4.0)
+  - SwiftyRSA/ObjC (1.4.0)
+  - TTRangeSlider (1.0.6)
 
 DEPENDENCIES:
   - Alamofire
   - AlamofireImage (~> 3.3)
+  - ALCameraViewController (~> 3.0.3)
+  - Crashlytics (~> 3.10.2)
+  - CropViewController
   - DatePickerDialog
+  - Fabric (~> 1.7.7)
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
   - Firebase/Messaging
+  - Firebase/Storage
   - GCCountryPicker
   - GeoFire (from `https://github.com/firebase/geofire-objc.git`)
   - GoogleMaps
   - GooglePlaces
   - InputMask
   - IQKeyboardManagerSwift
-  - MBPhotoPicker
-  - RangeSeekSlider (from `https://github.com/WorldDownTown/RangeSeekSlider.git`, branch `swift_4`)
+  - JSQMessagesViewController (= 7.3.5)
+  - Just (from `https://github.com/JustHTTP/Just.git`, branch `swift-4`)
+  - Kingfisher
+  - KMPlaceholderTextView (~> 1.3.0)
+  - Presentr
   - SVProgressHUD
   - SwiftyJSON
+  - SwiftyRSA
+  - TTRangeSlider (~> 1.0.5)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - AlamofireImage
+    - ALCameraViewController
+    - Crashlytics
+    - CropViewController
     - DatePickerDialog
+    - Fabric
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -106,6 +141,7 @@ SPEC REPOS:
     - FirebaseDatabase
     - FirebaseInstanceID
     - FirebaseMessaging
+    - FirebaseStorage
     - GCCountryPicker
     - GoogleMaps
     - GooglePlaces
@@ -113,32 +149,42 @@ SPEC REPOS:
     - GTMSessionFetcher
     - InputMask
     - IQKeyboardManagerSwift
+    - JSQMessagesViewController
+    - JSQSystemSoundPlayer
+    - Kingfisher
+    - KMPlaceholderTextView
     - leveldb-library
-    - MBPhotoPicker
     - nanopb
+    - Presentr
     - Protobuf
     - SVProgressHUD
     - SwiftyJSON
+    - SwiftyRSA
+    - TTRangeSlider
 
 EXTERNAL SOURCES:
   GeoFire:
     :git: https://github.com/firebase/geofire-objc.git
-  RangeSeekSlider:
-    :branch: swift_4
-    :git: https://github.com/WorldDownTown/RangeSeekSlider.git
+  Just:
+    :branch: swift-4
+    :git: https://github.com/JustHTTP/Just.git
 
 CHECKOUT OPTIONS:
   GeoFire:
     :commit: dc408bcd4268cc5ec8831cda0000c23863767d42
     :git: https://github.com/firebase/geofire-objc.git
-  RangeSeekSlider:
-    :commit: 77c29321a97c7f029e878e1479ab5ed5e4b2edb2
-    :git: https://github.com/WorldDownTown/RangeSeekSlider.git
+  Just:
+    :commit: 93fc04992243fb459af37963797ef5ac5224b242
+    :git: https://github.com/JustHTTP/Just.git
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   AlamofireImage: 3b35b586853abaf94ca1250f4e94cff3c21a4c0d
+  ALCameraViewController: 6398a9282057f709b87a1ecc52a83b48028ade64
+  Crashlytics: 0360624eea1c978a743feddb2fb1ef8b37fb7a0d
+  CropViewController: a9d579b526926c4e1caf754a89a9ac1c20aaa8eb
   DatePickerDialog: 5e1c24d9fe6506cd45dbc573eed7b0a251b1c09d
+  Fabric: bda89e242bce1b7b8ab264248cf3407774ce0095
   Firebase: 5ec5e863d269d82d66b4bf56856726f8fb8f0fb3
   FirebaseAnalytics: 7ef69e76a5142f643aeb47c780e1cdce4e23632e
   FirebaseAuth: bf22cacf22c60ab454bf2636f556d8892b10b53f
@@ -146,6 +192,7 @@ SPEC CHECKSUMS:
   FirebaseDatabase: 5f0bc6134c5c237cf55f9e1249d406770a75eafd
   FirebaseInstanceID: 8d20d890d65c917f9f7d9950b6e10a760ad34321
   FirebaseMessaging: 75cdb862e86c30e0913a2ff307e48d49357c5b73
+  FirebaseStorage: 0c223481c8f89ed300cf1239ddd2d9833622c65f
   GCCountryPicker: 61c2bc037aeea3fff15a9eb596c79701155b4362
   GeoFire: 3e70a24019dc16816190f533c9cac0d1321c4a71
   GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
@@ -154,14 +201,20 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
   InputMask: c75abc7660ff719809edde03684f9114b947d67e
   IQKeyboardManagerSwift: 04e8679f85e496bb2c474eeb9284052f1b3c391c
+  JSQMessagesViewController: 6587f56aedbcb150a8ba1d968e1ef58b1bc758b7
+  JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
+  Just: 72e8a6e01ec5adba1aa0f7996ff4459aa6a3d710
+  Kingfisher: 976d828df2b24834c6a3f2fc4d82cdbd26552be1
+  KMPlaceholderTextView: 2bbcd19a273648a80a61e1e48f9743a24d8930e3
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
-  MBPhotoPicker: e5b28084d0ab684c7a8ec35a20be23794acec118
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  Presentr: 797ae6ec8904eaba4ec58a4c2065bd66e31569ea
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
-  RangeSeekSlider: 650b11fa1edcb92e1e0ede797669d98622570fb5
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
+  SwiftyRSA: 601e4585fece2c6c50ae93a67c77cc2426e55cb2
+  TTRangeSlider: 78188bea83f6471a06f75adbc88da5e990baeafe
 
-PODFILE CHECKSUM: 27607650ccba81a551b7dee07df20b19efbb77c6
+PODFILE CHECKSUM: bdbee44f7df7fe11a7ff3743946142810cad6670
 
-COCOAPODS: 1.5.2
+COCOAPODS: 1.5.3

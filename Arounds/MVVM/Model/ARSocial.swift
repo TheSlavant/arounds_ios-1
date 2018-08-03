@@ -8,6 +8,21 @@
 
 import Foundation
 
+//enum SocialURL: String {
+//    var vk = "https://vk.com/"
+//    var fb = ""
+//    var insta = ""
+//    var twiter = ""
+
+//}
+
+enum SocialPrafix : String {
+    case vk = "https://vk.com/"
+    case fb = "https://www.facebook.com"
+    case insta = "https://www.instagram.com/"
+    case twiter = "https://twitter.com/"
+}
+
 class ARSocial {
     var vk = ""
     var fb = ""
@@ -28,4 +43,17 @@ class ARSocial {
         twiter = dict["twiter"] ?? ""
     }
     
+    func save() {
+        UserDefaults.standard.set(["vk":vk,"fb":fb,"insta":insta,"twiter":twiter,], forKey: "user_social")
+        UserDefaults.standard.synchronize()
+    }
+    
+    static func rebase() -> ARSocial? {
+        if let dict = UserDefaults.standard.value(forKey: "user_social") as? [String: String] {
+            return ARSocial.init(dict: dict)
+        }
+        return nil
+    }
+    
+
 }

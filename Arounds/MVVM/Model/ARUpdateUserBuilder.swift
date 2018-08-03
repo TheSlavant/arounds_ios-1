@@ -10,6 +10,8 @@ import Foundation
 
 struct ARUpdateUserBuilder {
     var fireID = ""
+    var firstName = ""
+    var lastName = ""
     var fullName = ""
     var nicName = ""
     var date:Double = 0
@@ -20,12 +22,15 @@ struct ARUpdateUserBuilder {
     
     func makeDict() -> [String: Any] {
         return ["fullName":fullName,
+                "firstName":firstName,
+                "lastName":lastName,
                 "aboute":aboute,
-                "nickName":nicName,
+                "nickname":nicName,
                 "birtDay":"\(date)",
                 "avatar": avatarBase64,
                 "phone":phone,
                 "gender": 1,
-                "fireID":fireID]
+                "fireID":fireID,
+                "isUpdated": true]
     }
 }

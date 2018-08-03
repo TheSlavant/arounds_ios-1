@@ -15,7 +15,11 @@ class MapViewModel: MapViewModeling {
     func getUsers(by filter: ARUserFilter, completion handler:(([ARUser])->Void)?) {
         nearestUser(radius: filter.distance) { (users) in
             Database.Users.users(by: users, completion: {[weak self] (users) in
-                guard let weakSelf = self else {return}
+                guard let weakSelf = self else {
+                    handler?([ARUser]())
+                    return
+                    
+                }
                 weakSelf.nearestUser = weakSelf.filtered(users: users, filter: filter)
                 handler?(weakSelf.nearestUser)
             })

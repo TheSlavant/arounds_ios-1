@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dII-ba-OVS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dII-ba-OVS">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="MontserratAlternates-Bold.ttf">
+            <string>MontserratAlternates-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--MapVC-->
         <scene sceneID="Ss3-lR-VLc">
@@ -29,11 +34,19 @@
                                     <constraint firstAttribute="height" constant="65" id="UMs-h5-ZuW"/>
                                 </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buttonShadow" translatesAutoresizingMaskIntoConstraints="NO" id="U6M-w6-zeo">
+                                <rect key="frame" x="5" y="578" width="368" height="88"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="Koh-Qo-34o"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMB-Gr-J8B" customClass="ARGradientedButton" customModule="Arounds" customModuleProvider="target">
                                 <rect key="frame" x="20" y="587" width="335" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="JB6-0D-PiP"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="MontserratAlternates-Bold" family="Montserrat Alternates" pointSize="14"/>
                                 <state key="normal" title="Написать в Радар">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -70,14 +83,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="U6M-w6-zeo" firstAttribute="leading" secondItem="VdI-vZ-XC0" secondAttribute="leading" constant="5" id="0Le-MR-PGK"/>
                             <constraint firstItem="KdW-6M-N2B" firstAttribute="bottom" secondItem="Gbg-tP-Jz8" secondAttribute="bottom" id="2Qa-Dv-0j0"/>
                             <constraint firstItem="KdW-6M-N2B" firstAttribute="top" secondItem="Gbg-tP-Jz8" secondAttribute="top" id="95C-Kt-32o"/>
+                            <constraint firstAttribute="trailing" secondItem="U6M-w6-zeo" secondAttribute="trailing" constant="2" id="G3S-0Z-VsS"/>
                             <constraint firstItem="Gbg-tP-Jz8" firstAttribute="bottom" secondItem="cMB-Gr-J8B" secondAttribute="bottom" constant="30" id="H0c-dw-Bky"/>
                             <constraint firstItem="Gbg-tP-Jz8" firstAttribute="trailing" secondItem="cMB-Gr-J8B" secondAttribute="trailing" constant="20" id="Hbt-nq-vqU"/>
                             <constraint firstItem="hTV-Oe-AlX" firstAttribute="leading" secondItem="Gbg-tP-Jz8" secondAttribute="leading" id="Stf-Gm-SGz"/>
                             <constraint firstItem="Gbg-tP-Jz8" firstAttribute="trailing" secondItem="hTV-Oe-AlX" secondAttribute="trailing" id="UZs-63-qDH"/>
                             <constraint firstItem="KdW-6M-N2B" firstAttribute="leading" secondItem="Gbg-tP-Jz8" secondAttribute="leading" id="aoh-Pc-jCn"/>
                             <constraint firstItem="KdW-6M-N2B" firstAttribute="trailing" secondItem="Gbg-tP-Jz8" secondAttribute="trailing" id="e1C-Dr-WbL"/>
+                            <constraint firstItem="U6M-w6-zeo" firstAttribute="centerY" secondItem="cMB-Gr-J8B" secondAttribute="centerY" constant="10" id="hj0-g9-hZj"/>
                             <constraint firstItem="hTV-Oe-AlX" firstAttribute="top" secondItem="VdI-vZ-XC0" secondAttribute="top" id="m6c-5F-2x3"/>
                             <constraint firstItem="cMB-Gr-J8B" firstAttribute="leading" secondItem="Gbg-tP-Jz8" secondAttribute="leading" constant="20" id="nU1-Ei-7BO"/>
                         </constraints>
@@ -91,7 +107,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yje-Rc-l4b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-142" y="162"/>
+            <point key="canvasLocation" x="-143.19999999999999" y="161.46926536731635"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="buttonShadow" width="745" height="181"/>
+    </resources>
 </document>

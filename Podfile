@@ -5,12 +5,12 @@ target 'Arounds' do
     
     use_frameworks!
     
-    # Pods for Alien Chat
     pod 'Firebase/Database'
     pod 'Firebase/Core'
     pod 'Firebase/Auth'
     pod 'Firebase/Core'
     pod 'Firebase/Messaging'
+    pod 'Firebase/Storage'
     pod ‘GeoFire’, :git => ‘https://github.com/firebase/geofire-objc.git'
     
     pod 'IQKeyboardManagerSwift', :inhibit_warnings => true
@@ -21,9 +21,19 @@ target 'Arounds' do
     pod 'Alamofire'
     pod 'SwiftyJSON'
     pod 'DatePickerDialog'
-    pod 'MBPhotoPicker'
+    pod 'KMPlaceholderTextView', '~> 1.3.0'
     pod 'GoogleMaps'
     pod 'GooglePlaces'
-    pod 'RangeSeekSlider', :git => 'https://github.com/WorldDownTown/RangeSeekSlider.git', :branch => 'swift_4'
-    
+    pod 'SwiftyRSA'
+    pod 'JSQMessagesViewController', '7.3.5'
+    pod 'Kingfisher'
+    pod 'Just', :git => 'https://github.com/JustHTTP/Just.git', :branch => 'swift-4'
+    pod 'Presentr'
+    pod 'Fabric', '~> 1.7.7'
+    pod 'Crashlytics', '~> 3.10.2'
+    pod 'ALCameraViewController', '~> 3.0.3'
+    pod 'TTRangeSlider', '~> 1.0.5'
+    pod 'CropViewController'
+
+
 end

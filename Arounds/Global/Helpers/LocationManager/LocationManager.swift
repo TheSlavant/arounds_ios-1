@@ -7,6 +7,7 @@
 //
 import CoreLocation
 import Foundation
+import Firebase
 
 protocol LocationManagerDelegate {
     func userCurrentLocation(location :CLLocation)
@@ -36,6 +37,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
             ARUser.currentUser?.coordinate = ARCoordinate(lat: location.coordinate.latitude, lng: location.coordinate.longitude)
+            Database.Users.setOnline()
             self.locationDelegate?.userCurrentLocation(location: location)
         }
     }

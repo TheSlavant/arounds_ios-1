@@ -8,8 +8,12 @@
 
 import Foundation
 
-//let kBaseUrl = "https://around-develop4.vapor.cloud/"
-let kBaseUrl = "https://around--develop4-vapor-cloud-ntarjnktylzg.runscope.net/"
+let notificationURL = "https://fcm.googleapis.com/fcm/send"
+let kBaseUrl = "https://arrounds-develop1.vapor.cloud/"
+//let kBaseUrl = "https://around--develop4-vapor-cloud-ntarjnktylzg.runscope.net/"
+
+
+
 
 
 //let kBaseUrl = "0.0.0.0:8002"

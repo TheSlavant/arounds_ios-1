@@ -19,4 +19,8 @@ extension UIView {
 
         return image
     }
+    
+    func centureOfX() -> CGFloat {
+        return frame.origin.x + (frame.size.width / 2)
+    }
 }

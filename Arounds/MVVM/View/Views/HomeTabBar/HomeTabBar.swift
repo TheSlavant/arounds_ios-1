@@ -5,7 +5,7 @@
 //  Created by Samvel Pahlevanyan on 5/1/18.
 //  Copyright © 2018 Samvel Pahlevanyan. All rights reserved.
 //
-
+import Firebase
 import UIKit
 
 protocol HomeTabBarDelegate {
@@ -14,9 +14,8 @@ protocol HomeTabBarDelegate {
 
 class HomeTabBar: UIView {
     @IBOutlet weak var stackView: UIStackView!
-    
+    //    HomeTabBarItem.loadFromNib(with: .star),
     lazy var tabBarItems = [HomeTabBarItem.loadFromNib(with: .map),
-                            HomeTabBarItem.loadFromNib(with: .star),
                             HomeTabBarItem.loadFromNib(with: .chat),
                             HomeTabBarItem.loadFromNib(with: .search),
                             HomeTabBarItem.loadFromNib(with: .profile)]
@@ -51,7 +50,7 @@ class HomeTabBar: UIView {
     func selectItem(at index:Int) {
         // close
         if let selectedItem = selectedItem {
-        selectedItem.imageView.tintColor = UIColor.withHex("4F4F6F")
+            selectedItem.imageView.tintColor = UIColor.withHex("4F4F6F")
         }
         // open
         if tabBarItems.count > index {
@@ -81,5 +80,40 @@ class HomeTabBar: UIView {
                 weakSelf.selectItem(at: weakSelf.tabBarItems.index(of: item)!)
             }
         }
+        
+        Database.Inbox.inboxes { [weak self] (newInboxes) in
+            self?.tabBarItems.filter({$0.type == .chat}).first?.bargeView.isHidden = !newInboxes.contains(where: { (inbox) -> Bool in
+                return inbox.senderID != ARUser.currentUser?.id ?? "" && inbox.seen == false
+            })
+        }
+
+        
+//        Database.database().reference()
+//            .child(kRadar_inbox)
+//            .child(ARUser.currentUser?.id ?? "")
+//            .child("radarMessages")
+//            .observe(.value) {[weak self] (snapshot) in
+//                if snapshot.exists(), let messages = snapshot.value as? [String] {
+//
+//                    Database.database().reference()
+//                        .child(kRadar_messages)
+//                        .observe(.value, with: { (snapshot) in
+//                            guard let weakSelf = self else {return}
+//                            if snapshot.exists(), let dict = snapshot.value as? [String : Any] {
+//                                let filtered = dict.filter({messages.contains($0.key)})
+//                                let maped = filtered.map({ (obj) -> RadarMessage in
+//                                    return RadarMessage.init(with: obj.value as! [String: Any], messageID: obj.key)
+//                                })
+//                                var a = 0
+//                                maped.forEach({ (radarMessage) in
+//                                    if (radarMessage.senderID != ARUser.currentUser?.id ?? "") && radarMessage.seen == false {
+//                                        a += 1
+//                                    }
+//                                })
+//                                weakSelf.tabBarItems.filter({$0.type == .chat}).first?.bargeView.isHidden = a == 0
+//                            }
+//                        })
+//                }
+//        }
     }
 }

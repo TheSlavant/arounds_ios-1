@@ -23,12 +23,26 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.965586474077-oevl5k3g6q18evlva1ujb5q55pimvnhg</string>
+				<string>com.googleusercontent.apps.256764512798-j9974c6958gahkppg56lm30g6tsfr255</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>3f0e050160c93b59d8772b8ed4b64bd015d2dd06</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict/>
+				<key>KitName</key>
+				<string>Crashlytics</string>
+			</dict>
+		</array>
+	</dict>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>googlechromes</string>
@@ -39,9 +53,9 @@
 	<key>NSCameraUsageDescription</key>
 	<string>$(PRODUCT_NAME) camera</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>$(PRODUCT_NAME) location</string>
+	<string>$(PRODUCT_NAME) использует геолокацию, чтоб ты мог видеть пользователей вокруг, а они — тебя</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>$(PRODUCT_NAME) location</string>
+	<string>$(PRODUCT_NAME) использует геолокацию, чтоб ты мог видеть пользователей вокруг, а они — тебя</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>$(PRODUCT_NAME) photo</string>
 	<key>UIAppFonts</key>

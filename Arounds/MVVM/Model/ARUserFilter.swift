@@ -12,6 +12,6 @@ class ARUserFilter {
     var distance: Int = 2000 //
     var male: Bool = true
     var female: Bool = true
-    var ageStart: Int = 17
-    var ageEnd: Int = 28
+    var ageStart: Int = 14
+    var ageEnd: Int = 99
 }

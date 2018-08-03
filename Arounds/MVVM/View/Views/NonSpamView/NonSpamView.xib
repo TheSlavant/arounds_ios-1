@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -25,8 +25,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ysx-gS-Vn9" customClass="ARShadowedView" customModule="Arounds" customModuleProvider="target">
-                    <rect key="frame" x="20" y="125" width="280" height="327"/>
+                    <rect key="frame" x="20" y="131.5" width="280" height="313.5"/>
                     <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buttonShadow" translatesAutoresizingMaskIntoConstraints="NO" id="BTi-1R-l88">
+                            <rect key="frame" x="8" y="220.5" width="265" height="88"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="88" id="mT4-MB-ywf"/>
+                            </constraints>
+                        </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BlT-CB-XBU">
                             <rect key="frame" x="20" y="20" width="240" height="55"/>
                             <constraints>
@@ -46,17 +52,15 @@
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKE-ce-B9b">
-                            <rect key="frame" x="20" y="116" width="240" height="121"/>
-                            <string key="text">Мы очень не любим спам и личные оскорбления. Пожалуйста, уважайте наше сообщество и не вредничайте 😉
-Если ваше сообщение получит 3 жалобы от пользователей, то мы удалим его 
-и на время заблокируем ваш аккаунт.
-</string>
+                            <rect key="frame" x="19" y="116" width="242" height="94"/>
+                            <string key="text">Мы очень не любим спам и личные оскорбления. Пожалуйста, уважай наше сообщество и не вредничай☺️.
+Если твоё сообщение получит 3 жалобы от пользователей, то мы удалим его и на время заблокируем твой аккаунт</string>
                             <fontDescription key="fontDescription" name="MontserratAlternates-Regular" family="Montserrat Alternates" pointSize="11"/>
                             <color key="textColor" red="0.53333333329999999" green="0.53333333329999999" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Zi-gT-KnP" customClass="ARGradientedButton" customModule="Arounds" customModuleProvider="target">
-                            <rect key="frame" x="20" y="257" width="240" height="50"/>
+                            <rect key="frame" x="20" y="230" width="240" height="50"/>
                             <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="ENu-Yo-Xfu"/>
@@ -104,13 +108,16 @@
                         <constraint firstItem="BlT-CB-XBU" firstAttribute="top" secondItem="Ysx-gS-Vn9" secondAttribute="top" constant="20" id="B77-LB-ZLn"/>
                         <constraint firstItem="4Lq-hT-oqW" firstAttribute="leading" secondItem="Ysx-gS-Vn9" secondAttribute="leading" id="Dkg-kc-XKa"/>
                         <constraint firstItem="4Lq-hT-oqW" firstAttribute="top" secondItem="BlT-CB-XBU" secondAttribute="bottom" constant="20" id="Q8j-i2-f0q"/>
-                        <constraint firstAttribute="bottom" secondItem="5Zi-gT-KnP" secondAttribute="bottom" constant="20" id="QFO-rx-tlQ"/>
+                        <constraint firstAttribute="bottom" secondItem="5Zi-gT-KnP" secondAttribute="bottom" constant="33.5" id="QFO-rx-tlQ"/>
+                        <constraint firstAttribute="trailing" secondItem="BTi-1R-l88" secondAttribute="trailing" constant="7" id="R86-IA-pey"/>
                         <constraint firstAttribute="trailing" secondItem="4Lq-hT-oqW" secondAttribute="trailing" id="UX1-PX-duG"/>
                         <constraint firstItem="5Zi-gT-KnP" firstAttribute="leading" secondItem="Ysx-gS-Vn9" secondAttribute="leading" constant="20" id="eBs-GH-MR4"/>
                         <constraint firstItem="BlT-CB-XBU" firstAttribute="leading" secondItem="Ysx-gS-Vn9" secondAttribute="leading" constant="20" id="ezB-co-3U6"/>
-                        <constraint firstItem="yKE-ce-B9b" firstAttribute="leading" secondItem="Ysx-gS-Vn9" secondAttribute="leading" constant="20" id="fa0-Ie-4d4"/>
+                        <constraint firstItem="yKE-ce-B9b" firstAttribute="leading" secondItem="Ysx-gS-Vn9" secondAttribute="leading" constant="19" id="fa0-Ie-4d4"/>
+                        <constraint firstAttribute="bottom" secondItem="BTi-1R-l88" secondAttribute="bottom" constant="5" id="hiN-Pe-5eO"/>
                         <constraint firstItem="5Zi-gT-KnP" firstAttribute="top" secondItem="yKE-ce-B9b" secondAttribute="bottom" constant="20" id="kNE-Qu-xZu"/>
-                        <constraint firstAttribute="trailing" secondItem="yKE-ce-B9b" secondAttribute="trailing" constant="20" id="qQQ-8y-Exv"/>
+                        <constraint firstAttribute="trailing" secondItem="yKE-ce-B9b" secondAttribute="trailing" constant="19" id="qQQ-8y-Exv"/>
+                        <constraint firstItem="BTi-1R-l88" firstAttribute="leading" secondItem="Ysx-gS-Vn9" secondAttribute="leading" constant="8" id="sZh-td-oqZ"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -119,7 +126,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="Ysx-gS-Vn9" firstAttribute="centerY" secondItem="VD2-9O-xmG" secondAttribute="centerY" id="5fu-kE-5Vg"/>
                 <constraint firstItem="VD2-9O-xmG" firstAttribute="trailing" secondItem="Ysx-gS-Vn9" secondAttribute="trailing" constant="20" id="ATf-tf-DW6"/>
@@ -130,4 +137,7 @@
             <point key="canvasLocation" x="-471" y="397"/>
         </view>
     </objects>
+    <resources>
+        <image name="buttonShadow" width="745" height="181"/>
+    </resources>
 </document>

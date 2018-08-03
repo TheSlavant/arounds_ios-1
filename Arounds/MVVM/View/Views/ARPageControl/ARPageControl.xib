@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -19,10 +19,10 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ga6-Pv-8GD">
-                    <rect key="frame" x="0.0" y="0.0" width="113" height="83"/>
+                    <rect key="frame" x="0.0" y="0.0" width="150.5" height="83"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n71-bb-Wlc" customClass="ARBorderedView" customModule="Arounds" customModuleProvider="target">
-                            <rect key="frame" x="36.5" y="21" width="41.5" height="41.5"/>
+                            <rect key="frame" x="46.5" y="12.5" width="58" height="58.5"/>
                             <color key="backgroundColor" red="0.94509803921568625" green="0.91764705882352937" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="n71-bb-Wlc" secondAttribute="height" multiplier="1:1" id="Qhd-6W-dpz"/>
@@ -32,18 +32,18 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="n71-bb-Wlc" firstAttribute="height" secondItem="ga6-Pv-8GD" secondAttribute="height" multiplier="0.5" id="5NO-lf-Dyd"/>
+                        <constraint firstItem="n71-bb-Wlc" firstAttribute="height" secondItem="ga6-Pv-8GD" secondAttribute="height" multiplier="0.7" id="5NO-lf-Dyd"/>
                         <constraint firstItem="n71-bb-Wlc" firstAttribute="centerY" secondItem="ga6-Pv-8GD" secondAttribute="centerY" id="9O9-0X-Y81"/>
                         <constraint firstItem="n71-bb-Wlc" firstAttribute="centerX" secondItem="ga6-Pv-8GD" secondAttribute="centerX" id="b23-eC-4zb"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sYD-9t-HS5">
-                    <rect key="frame" x="113" y="0.0" width="112.5" height="83"/>
+                    <rect key="frame" x="150.5" y="0.0" width="150" height="83"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aY1-G5-Nef" customClass="ARBorderedView" customModule="Arounds" customModuleProvider="target">
-                            <rect key="frame" x="35" y="21" width="41.5" height="41.5"/>
+                            <rect key="frame" x="45.5" y="12.5" width="58" height="58.5"/>
                             <color key="backgroundColor" red="0.94509803920000002" green="0.91764705879999997" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="aY1-G5-Nef" secondAttribute="height" multiplier="1:1" id="lC1-CK-W2f"/>
@@ -53,18 +53,18 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="aY1-G5-Nef" firstAttribute="height" secondItem="sYD-9t-HS5" secondAttribute="height" multiplier="0.5" id="2Q4-PS-bS4"/>
+                        <constraint firstItem="aY1-G5-Nef" firstAttribute="height" secondItem="sYD-9t-HS5" secondAttribute="height" multiplier="0.7" id="2Q4-PS-bS4"/>
                         <constraint firstItem="aY1-G5-Nef" firstAttribute="centerY" secondItem="sYD-9t-HS5" secondAttribute="centerY" id="BxJ-zc-zf0"/>
                         <constraint firstItem="aY1-G5-Nef" firstAttribute="centerX" secondItem="sYD-9t-HS5" secondAttribute="centerX" id="Jdd-rX-xzA"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Njc-qg-2sa">
-                    <rect key="frame" x="225.5" y="0.0" width="113" height="83"/>
+                    <rect key="frame" x="300.5" y="0.0" width="150.5" height="83"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JPN-5s-2RT" customClass="ARBorderedView" customModule="Arounds" customModuleProvider="target">
-                            <rect key="frame" x="36" y="21" width="41.5" height="41.5"/>
+                            <rect key="frame" x="46.5" y="12.5" width="58" height="58.5"/>
                             <color key="backgroundColor" red="0.94509803920000002" green="0.91764705879999997" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="JPN-5s-2RT" secondAttribute="height" multiplier="1:1" id="DmU-vf-9zJ"/>
@@ -74,35 +74,15 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="JPN-5s-2RT" firstAttribute="centerY" secondItem="Njc-qg-2sa" secondAttribute="centerY" id="Ta5-jh-ga0"/>
-                        <constraint firstItem="JPN-5s-2RT" firstAttribute="height" secondItem="Njc-qg-2sa" secondAttribute="height" multiplier="0.5" id="U7F-oZ-PKp"/>
+                        <constraint firstItem="JPN-5s-2RT" firstAttribute="height" secondItem="Njc-qg-2sa" secondAttribute="height" multiplier="0.7" id="U7F-oZ-PKp"/>
                         <constraint firstItem="JPN-5s-2RT" firstAttribute="centerX" secondItem="Njc-qg-2sa" secondAttribute="centerX" id="t1E-0M-unn"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lHp-31-BZc">
-                    <rect key="frame" x="338.5" y="0.0" width="112.5" height="83"/>
-                    <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2DE-Uz-v3J" customClass="ARBorderedView" customModule="Arounds" customModuleProvider="target">
-                            <rect key="frame" x="35.5" y="21" width="41.5" height="41.5"/>
-                            <color key="backgroundColor" red="0.94509803920000002" green="0.91764705879999997" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="2DE-Uz-v3J" secondAttribute="height" multiplier="1:1" id="1Uv-fZ-ZY7"/>
-                            </constraints>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
-                            </userDefinedRuntimeAttributes>
-                        </view>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstItem="2DE-Uz-v3J" firstAttribute="centerY" secondItem="lHp-31-BZc" secondAttribute="centerY" id="JDQ-bK-ga6"/>
-                        <constraint firstItem="2DE-Uz-v3J" firstAttribute="height" secondItem="lHp-31-BZc" secondAttribute="height" multiplier="0.5" id="XiF-qe-K28"/>
-                        <constraint firstItem="2DE-Uz-v3J" firstAttribute="centerX" secondItem="lHp-31-BZc" secondAttribute="centerX" id="lWb-AU-V9u"/>
-                    </constraints>
-                </view>
             </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="Qah-wM-UI0"/>
             <point key="canvasLocation" x="245" y="-159"/>
         </stackView>

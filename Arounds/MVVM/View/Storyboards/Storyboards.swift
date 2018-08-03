@@ -22,4 +22,5 @@ enum Storyboards: String {
     case Policy = "Policy"
     case ChatList = "ChatList"
     case Map = "Map"
+    case Chat = "Chat"
 }

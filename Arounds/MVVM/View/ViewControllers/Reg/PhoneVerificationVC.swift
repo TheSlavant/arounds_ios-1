@@ -39,6 +39,10 @@ class PhoneVerificationVC: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
     }
     
+        override var prefersStatusBarHidden: Bool {
+        return false
+    }
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) { [weak self] in
@@ -55,8 +59,9 @@ class PhoneVerificationVC: UIViewController, UITextFieldDelegate {
         guard let countryPickerViewController = countryPickerViewController  else {
             return
         }
+//        countryPickerViewController.
         countryPickerViewController.delegate = self
-        countryPickerViewController.navigationItem.title = "Countries"
+        countryPickerViewController.navigationItem.title = "Страны"
         countryPickerNavigationController = UINavigationController(rootViewController: countryPickerViewController)
         self.present(countryPickerNavigationController!, animated: true, completion: nil)
     }

@@ -10,7 +10,7 @@ import UIKit
 
 class ARSearch: ARBorderedView {
     
-    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var textField: UITextField!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,3 +18,4 @@ class ARSearch: ARBorderedView {
     }
     
 }
+

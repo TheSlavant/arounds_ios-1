@@ -8,16 +8,26 @@
 
 import UIKit
 
-class PrivacyVC: UIViewController {
+class PrivacyVC: UIViewController, UITextViewDelegate {
 
+    @IBOutlet weak var textView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+    }
+
+        override var prefersStatusBarHidden: Bool {
+        return false
     }
 
     @IBAction func clickButtonBack(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
+        UIApplication.shared.open(URL, options: [:])
+        return false
+    }
+
     
 }

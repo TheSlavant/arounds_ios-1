@@ -33,7 +33,8 @@ class ARClusteredUsersCell: UITableViewCell {
     func updateUI() {
         if let user = user {
             self.likiImage.tintColor = UIColor.withHex("6A6A77" )
-            userFullNameLabel.text = user.fullName
+            userFullNameLabel.text = "\(user.firstName ?? "") \(user.lastName ?? "")"
+
             avatar.image = user.getImage()
             if avatar.image == nil {
                 avatar.image = UIImage.init(named: user.gender == .male ? "maleAvatar" : "femaleAvatar")

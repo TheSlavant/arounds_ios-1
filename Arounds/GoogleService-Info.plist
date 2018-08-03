@@ -7,34 +7,34 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>965586474077-oevl5k3g6q18evlva1ujb5q55pimvnhg.apps.googleusercontent.com</string>
+	<string>256764512798-j9974c6958gahkppg56lm30g6tsfr255.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.965586474077-oevl5k3g6q18evlva1ujb5q55pimvnhg</string>
+	<string>com.googleusercontent.apps.256764512798-j9974c6958gahkppg56lm30g6tsfr255</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBeiLiXWJBiKIIp7NZ840nt5oOZMurKUGs</string>
+	<string>AIzaSyDGQD4EdCZ64dmCepnkrIY1lklzQyGuc0Q</string>
 	<key>GCM_SENDER_ID</key>
-	<string>965586474077</string>
+	<string>256764512798</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.samo.Arounds</string>
+	<string>com.Arounds</string>
 	<key>PROJECT_ID</key>
-	<string>arounds-f1456</string>
+	<string>arounds-ffd45</string>
 	<key>STORAGE_BUCKET</key>
-	<string>arounds-f1456.appspot.com</string>
+	<string>arounds-ffd45.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:965586474077:ios:1ecc5f19c2fe4682</string>
+	<string>1:256764512798:ios:f0859d016e93fde8</string>
 	<key>DATABASE_URL</key>
-	<string>https://arounds-f1456.firebaseio.com</string>
+	<string>https://arounds-ffd45.firebaseio.com/</string>
 </dict>
 </plist>

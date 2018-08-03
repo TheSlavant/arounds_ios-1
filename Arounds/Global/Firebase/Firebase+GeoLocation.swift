@@ -23,14 +23,12 @@ extension Database {
         static func users(in location:ARCoordinate, radius:Int, userID: String, completion handler:(([(key: String, location: CLLocation)])->Void)?) {
             let geofireRef = database.child(locations)
             let geoFire = GeoFire(firebaseRef: geofireRef)
-            
             let center = CLLocation(latitude: location.lat, longitude: location.lng)
-            let circleQuery = geoFire.query(at: center, withRadius: Double(radius / 1000))
+            let circleQuery = geoFire.query(at: center, withRadius: Double(Double(radius) / 1000))
 
             var array = [(key: String, location: CLLocation)]()
             circleQuery.observe(.keyEntered, with: { (key: String!, location: CLLocation!) in
-                print(array.count)
-                print(key)
+
                 if !array.contains(where: { (extKey, extLocation) -> Bool in
                     return extKey == key || key == userID
                 }) {

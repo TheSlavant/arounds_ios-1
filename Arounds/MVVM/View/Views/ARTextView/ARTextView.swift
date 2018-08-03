@@ -6,48 +6,57 @@
 //  Copyright © 2018 Samvel Pahlevanyan. All rights reserved.
 //
 
+import KMPlaceholderTextView
 import UIKit
 
 @IBDesignable
 class ARTextView: ARBorderedView  {
-    
+   
+    var didClickText:((String)-> Void)?
+
     var text = "" {
         didSet{
-            mode(isPlaceholder: text.count == 0)
             if  text.count > 0 {
                 textView.text = text
             }
             rangeLabel.text = "\(textView.text.count)/\(max)"
-
-//            rangeLabel.text = "\(textView.text.count)/\(max)"
         }
     }
+    @IBOutlet weak var textView: KMPlaceholderTextView!
     @IBOutlet weak var rangeLabel: UILabel!
-    @IBOutlet weak var textView: UITextView!
+
     
     @IBInspectable var max: Int = 100
     @IBInspectable var placeholder: String = ""
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
         self.setupUI(name: self.nameOfClass)
         textView.delegate = self
-        mode(isPlaceholder: text.count == 0)
         if  text.count > 0 {
             textView.text = text
         }
         rangeLabel.text = "\(textView.text.count)/\(max)"
-
+        textView.placeholder = placeholder
+    }
+    
+    func clear() {
+        textView.text = ""
+        rangeLabel.text = "\(0)/\(max)"
     }
 }
 
 extension ARTextView: UITextViewDelegate {
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+       
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
+            self?.didClickText?(textView.text)
+        }
+
         let count = textView.text.count
         //
-        if text != "" && count == max {
+        if text != "" && count >= max {
             return false
         }
         //
@@ -56,28 +65,6 @@ extension ARTextView: UITextViewDelegate {
         return true
     }
     
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.textColor == .lightGray {
-            mode(isPlaceholder: false)
-        }
-    }
-    
-    
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if textView.text.isEmpty {
-            mode(isPlaceholder: true)
-        }
-    }
-    
-    func mode(isPlaceholder: Bool) {
-        if isPlaceholder {
-            textView.text = placeholder
-            textView.textColor = .lightGray
-        } else {
-            textView.text = text
-            textView.textColor = UIColor.withHex("535376")
-        }
-    }
 }
 
 

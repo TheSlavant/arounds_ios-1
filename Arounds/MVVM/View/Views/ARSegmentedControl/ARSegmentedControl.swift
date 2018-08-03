@@ -9,8 +9,8 @@
 import UIKit
 
 enum ARSelectedSegment: Int {
-    case first = 1
-    case secound = 2
+    case first = 2
+    case secound = 1
 }
 
 class ARSegmentedControl: ARBorderedView {
@@ -55,6 +55,7 @@ class ARSegmentedControl: ARBorderedView {
     
     func select(button:UIButton) {
         selectedButton = button
+        selected = button.tag
         button.isSelected = true
         button.setTitleColor(UIColor.withHex("F94865"), for: .selected)
         button.tintColor = UIColor.withHex("F94865")

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -48,6 +48,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="hJR-qe-uXg"/>
                                             </constraints>
+                                            <color key="tintColor" red="0.5490196078431373" green="0.53725490196078429" blue="0.63137254901960782" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="filter_icon"/>
                                             <state key="selected" image="selectedFilter"/>
                                             <connections>
@@ -89,9 +90,10 @@
                                                                         <constraint firstAttribute="width" secondItem="jwd-he-IBj" secondAttribute="height" multiplier="1:1" id="vU1-jz-NgI"/>
                                                                     </constraints>
                                                                 </imageView>
-                                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Geg-6s-B6j">
+                                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Geg-6s-B6j">
                                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                                    <state key="normal">
+                                                                    <inset key="imageEdgeInsets" minX="21" minY="14" maxX="21" maxY="14"/>
+                                                                    <state key="normal" image="male_icon">
                                                                         <color key="titleShadowColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     </state>
                                                                     <connections>
@@ -129,8 +131,10 @@
                                                                         <constraint firstAttribute="width" secondItem="mgt-8I-JyA" secondAttribute="height" multiplier="1:1" id="nJf-WM-p3O"/>
                                                                     </constraints>
                                                                 </imageView>
-                                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yZd-yK-kEE">
+                                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yZd-yK-kEE">
                                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                    <inset key="imageEdgeInsets" minX="20" minY="14" maxX="20" maxY="14"/>
+                                                                    <state key="normal" image="female_icon"/>
                                                                     <connections>
                                                                         <action selector="femaleButtonClick:" destination="JyV-cJ-FAY" eventType="touchUpInside" id="h4w-6P-fbY"/>
                                                                     </connections>
@@ -156,65 +160,53 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RL1-3k-H7a" customClass="RangeSeekSlider" customModule="RangeSeekSlider">
-                                                            <rect key="frame" x="20" y="90" width="240" height="30"/>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RL1-3k-H7a">
+                                                            <rect key="frame" x="10" y="90" width="260" height="30"/>
+                                                            <subviews>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xpa-k9-ZUy" customClass="TTRangeSlider">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="260" height="30"/>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <color key="tintColor" red="0.97254901959999995" green="0.97647058819999999" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="minValue">
+                                                                            <real key="value" value="14"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                                                                            <real key="value" value="99"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                                                            <real key="value" value="10"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="selectedMinimum">
+                                                                            <real key="value" value="14"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="selectedMaximum">
+                                                                            <real key="value" value="99"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="maxLabelColour">
+                                                                            <color key="value" red="0.41568627450000001" green="0.41568627450000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="minLabelColour">
+                                                                            <color key="value" red="0.41568627450000001" green="0.41568627450000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="tintColorBetweenHandles">
+                                                                            <color key="value" red="0.97647058819999999" green="0.28235294119999998" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="lineBorderColor">
+                                                                            <color key="value" red="0.97254901959999995" green="0.97647058819999999" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </view>
+                                                            </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <color key="tintColor" red="0.97254901959999995" green="0.97647058819999999" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
+                                                                <constraint firstItem="xpa-k9-ZUy" firstAttribute="leading" secondItem="RL1-3k-H7a" secondAttribute="leading" id="4Te-uP-nlr"/>
                                                                 <constraint firstAttribute="height" constant="30" id="BZd-XQ-O6K"/>
+                                                                <constraint firstItem="xpa-k9-ZUy" firstAttribute="top" secondItem="RL1-3k-H7a" secondAttribute="top" id="Ulw-IA-0PV"/>
+                                                                <constraint firstAttribute="trailing" secondItem="xpa-k9-ZUy" secondAttribute="trailing" id="cZl-GI-wVF"/>
+                                                                <constraint firstAttribute="bottom" secondItem="xpa-k9-ZUy" secondAttribute="bottom" id="fmN-if-rSy"/>
                                                             </constraints>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="minValue">
-                                                                    <real key="value" value="14"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
-                                                                    <real key="value" value="99"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="selectedMinValue">
-                                                                    <real key="value" value="17"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="selectedMaxValue">
-                                                                    <real key="value" value="28"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="colorBetweenHandles">
-                                                                    <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="image" keyPath="handleImage" value="circle"/>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="handleColor">
-                                                                    <color key="value" red="0.97254901959999995" green="0.97647058819999999" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="selectedHandleDiameterMultiplier">
-                                                                    <real key="value" value="0.0"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
-                                                                    <real key="value" value="10"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="handleBorderWidth">
-                                                                    <real key="value" value="0.0"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="labelPadding">
-                                                                    <real key="value" value="0.0"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="minLabelColor">
-                                                                    <color key="value" red="0.41568627450000001" green="0.41568627450000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="maxLabelColor">
-                                                                    <color key="value" red="0.41568627450000001" green="0.41568627450000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="string" keyPath="minLabelAccessibilityLabel" value="zxx"/>
-                                                                <userDefinedRuntimeAttribute type="string" keyPath="maxLabelAccessibilityLabel" value=";;;;"/>
-                                                                <userDefinedRuntimeAttribute type="string" keyPath="minLabelAccessibilityHint" value=",\"/>
-                                                                <userDefinedRuntimeAttribute type="string" keyPath="maxLabelAccessibilityHint" value="0-="/>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="handleDiameter">
-                                                                    <real key="value" value="-10"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="initialColor">
-                                                                    <color key="value" red="0.97254901959999995" green="0.97647058819999999" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="handleBorderColor">
-                                                                    <color key="value" red="1" green="0.2470588235" blue="0.70588235290000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
                                                         </view>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -224,9 +216,9 @@
                                                         <constraint firstItem="RL1-3k-H7a" firstAttribute="top" secondItem="CRW-yQ-EYV" secondAttribute="bottom" constant="20" id="Ckw-uD-ARH"/>
                                                         <constraint firstItem="mgt-8I-JyA" firstAttribute="height" secondItem="jwd-he-IBj" secondAttribute="height" id="Maf-ii-31j"/>
                                                         <constraint firstItem="CRW-yQ-EYV" firstAttribute="width" secondItem="CRW-yQ-EYV" secondAttribute="height" multiplier="1:1" id="OlI-ro-gdc"/>
-                                                        <constraint firstAttribute="trailing" secondItem="RL1-3k-H7a" secondAttribute="trailing" constant="20" id="VR4-fS-h80"/>
+                                                        <constraint firstAttribute="trailing" secondItem="RL1-3k-H7a" secondAttribute="trailing" constant="10" id="VR4-fS-h80"/>
                                                         <constraint firstItem="CRW-yQ-EYV" firstAttribute="leading" secondItem="Agq-kW-Ve6" secondAttribute="leading" constant="20" id="Wkx-I7-3Ci"/>
-                                                        <constraint firstItem="RL1-3k-H7a" firstAttribute="leading" secondItem="Agq-kW-Ve6" secondAttribute="leading" constant="20" id="ihw-JT-q9o"/>
+                                                        <constraint firstItem="RL1-3k-H7a" firstAttribute="leading" secondItem="Agq-kW-Ve6" secondAttribute="leading" constant="10" id="ihw-JT-q9o"/>
                                                         <constraint firstItem="CRW-yQ-EYV" firstAttribute="top" secondItem="Agq-kW-Ve6" secondAttribute="top" constant="20" id="in0-ZT-2n9"/>
                                                         <constraint firstAttribute="height" constant="140" id="k3L-It-9cM"/>
                                                         <constraint firstAttribute="bottom" secondItem="te2-ue-SjL" secondAttribute="bottom" id="kli-wt-Cas"/>
@@ -307,18 +299,19 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="71Z-N3-ESB"/>
             <connections>
-                <outlet property="ageFilterSlider" destination="RL1-3k-H7a" id="GKM-Py-ZT5"/>
                 <outlet property="countOfUsers" destination="1HU-Sc-TEO" id="YXR-bW-vk1"/>
+                <outlet property="felmaleView" destination="QQo-tT-sfM" id="Pmb-Ac-XAn"/>
                 <outlet property="femaleButton" destination="yZd-yK-kEE" id="3SM-8z-cB1"/>
                 <outlet property="filterViewHeightConstraint" destination="Rb0-Lm-gGs" id="Ldu-0g-U6y"/>
                 <outlet property="maleButton" destination="Geg-6s-B6j" id="WlS-jg-Ida"/>
+                <outlet property="maleView" destination="CRW-yQ-EYV" id="D9R-A6-0KP"/>
+                <outlet property="rangeSlider" destination="xpa-k9-ZUy" id="37g-fA-lLt"/>
                 <outlet property="tableView" destination="REN-fW-nfJ" id="fpG-os-qAk"/>
             </connections>
             <point key="canvasLocation" x="-471" y="271.5"/>
         </view>
     </objects>
     <resources>
-        <image name="circle" width="26" height="26"/>
         <image name="female_icon" width="14" height="31"/>
         <image name="filter_icon" width="36" height="35"/>
         <image name="male_icon" width="11" height="31"/>

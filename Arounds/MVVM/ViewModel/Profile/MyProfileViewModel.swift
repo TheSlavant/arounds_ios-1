@@ -9,6 +9,10 @@ import Firebase
 import Foundation
 
 class MyProfileViewModel: ProfileViewModeling {
+    
+    var didFetchedBlock: ((ARProfileBlock?) -> Void)?
+    var userBlock: ARProfileBlock?
+    
     var user: ARUser?
     var social: ARSocial?
     var didFetchedSocial: ((ARSocial?) -> Void)?
@@ -17,15 +21,35 @@ class MyProfileViewModel: ProfileViewModeling {
 
     required init(with newUser: ARUser) {
         user = newUser
-        Database.Users.social(userID: user?.id ?? "") { [weak self] (social) in
-           self?.social = social
-           self?.didFetchedSocial?(social)
+        guard let userID = user?.id else {return}
+        Database.Users.social(userID: userID) { [weak self] (social) in
+            if social != nil {
+                social?.save()
+            }
+            self?.social = social
+            self?.didFetchedSocial?(social)
+        }
+        
+        Database.ProfileBlock.userBlock(by: userID) { [weak self] (block) in
+            self?.userBlock = block
+            self?.didFetchedBlock?(block)
         }
     }
     
     func likes(handler: (([String : Any]) -> Void)?) {
         Database.Likes.likes(userID: user?.id ?? "") {(likes) in
             handler?(likes)
+        }
+    }
+
+    func startFatchingSocial() {
+        guard let userID = user?.id else {return}
+        Database.Users.social(userID: userID) { [weak self] (social) in
+            if social != nil {
+                social?.save()
+            }
+            self?.social = social
+            self?.didFetchedSocial?(social)
         }
     }
 

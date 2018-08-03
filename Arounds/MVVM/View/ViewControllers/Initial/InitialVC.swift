@@ -11,18 +11,19 @@ import UIKit
 enum InitialPage:Int {
     case first
     case secound
-    case third
+//    case third
     case fourth
 }
 
 fileprivate let initialContent: [InitialPage: [String:String]] = [
     .first: ["title":"Локальные знакомства", "description":"Заводи новые знакомства среди тех кто рядом"],
-    .secound: ["title":"Радар", "description":"Обменивайся сообщениями, идеями и лайфхаками с теми, кто тебя окружает"],
-    .third: ["title":"События", "description":"Создай эвент, пригласи новых знакомых и оторвитесь вместе!"],
+    .secound: ["title":"Радар", "description":"Обменивайся сообщениями и собирайся компаниями с теми, кто тебя окружают"],
+//    .third: ["title":"События", "description":"Создай эвент, пригласи новых знакомых и оторвитесь вместе!"],
     .fourth: ["title":"Чаты", "description":"Просто и удобно общайся с тем, кто нравится"]]
 
 class InitialVC: UIViewController {
 
+    @IBOutlet weak var regShadowImage: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var regButton: ARGradientedButton!
@@ -36,6 +37,10 @@ class InitialVC: UIViewController {
         pageControl = ARPageControl.loadFromNib(onView: pageControlParentView)
         didSwipe(page: .first)
         // Do any additional setup after loading the view.
+    }
+
+        override var prefersStatusBarHidden: Bool {
+        return false
     }
 
     @IBAction func panGesture(_ sender: UISwipeGestureRecognizer) {
@@ -55,7 +60,6 @@ class InitialVC: UIViewController {
            //
             UIView.animate(withDuration: 0.3, animations: {
                 self.scrollView.contentOffset = CGPoint.init(x: self.scrollView.contentOffset.x + self.scrollView.frame.size.width, y: 0)
-                //                self.scrollView.setContentOffset()
             }) { (finish) in
                 self.view.isUserInteractionEnabled = true
             }
@@ -74,7 +78,7 @@ class InitialVC: UIViewController {
         }
         pageControl?.selected = page.rawValue
         regButton.isHidden = page != .fourth
-
+        regShadowImage.isHidden = regButton.isHidden
     }
     
     func updateScreen(dic: [String:String]) {

@@ -27,25 +27,29 @@ class FirstUpdateProfileViewModel: EditProfileViewModeling {
     }
     
     func validate(fields fireID: String,
-                  fullName: String,
+                  firstName: String,
+                  lastName: String,
                   nicName: String,
                   gender: UserGender,
                   date: Date?,
                   aboute: String,
                   avatar: String,
                   phone: String,
-                  completion handler: ((String?, ARUpdateUserBuilder?) -> Void)?) {
+                  insta:String,
+                  completion handler: ((String?, ARUpdateUserBuilder?,[Int]) -> Void)?) {
         
         let result = ARValidation.validateUpdated(fields: fireID,
-                                                  fullName: fullName,
+                                                  firstName: firstName,
+                                                  lastName: lastName,
                                                   nicName: nicName,
                                                   gender: gender,
                                                   date: date,
                                                   aboute: aboute,
                                                   avatar: avatar,
-                                                  phone: phone)
-        
-        handler?(result.0, result.1)
+                                                  phone: phone,
+                                                  insta: insta)
+
+        handler?(result.0, result.1, result.2)
     }
     
     func update(user builder:ARUpdateUserBuilder, completion handler:((Error? , Bool?)->Void)?) {

@@ -24,8 +24,13 @@ extension Database {
             
         }
         
-        static func like(fromID: String, toID: String) {
+        static func like(fromID: String, toID: String, DCS: String?) {
             database.child("likes").child(toID).updateChildValues([fromID : true])
+           
+            if let DCS = DCS {
+                PushNotification.sharedInstance.sendNotificationWithBadge(reciverToken: DCS, body: "Ваш профиль понравился @\(ARUser.currentUser?.nickName ?? "")", title: "")
+            }
+       
         }
         
         static func dislike(fromID: String, toID: String) {

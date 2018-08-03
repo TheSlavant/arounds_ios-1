@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -25,6 +25,12 @@
                         <constraint firstAttribute="width" secondItem="qz1-D5-oWA" secondAttribute="height" multiplier="1:1" id="DrS-v7-xnc"/>
                     </constraints>
                 </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mapUserBorder" translatesAutoresizingMaskIntoConstraints="NO" id="0hy-0Y-fng">
+                    <rect key="frame" x="22" y="19" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="0hy-0Y-fng" secondAttribute="height" multiplier="1:1" id="IkW-uy-KEz"/>
+                    </constraints>
+                </imageView>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0oh-oQ-IaQ">
                     <rect key="frame" x="24.5" y="21.5" width="35" height="35"/>
                     <subviews>
@@ -33,10 +39,10 @@
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
                                 <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                    <real key="value" value="2"/>
+                                    <real key="value" value="0.0"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                    <color key="value" red="0.95294117647058818" green="0.31764705882352939" blue="0.098039215686274508" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </imageView>
@@ -55,8 +61,11 @@
             <constraints>
                 <constraint firstItem="qz1-D5-oWA" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" constant="-1" id="7SG-eJ-YH0"/>
                 <constraint firstItem="0oh-oQ-IaQ" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.35" id="7cZ-wS-2pq"/>
+                <constraint firstItem="0hy-0Y-fng" firstAttribute="centerX" secondItem="0oh-oQ-IaQ" secondAttribute="centerX" id="E6w-aU-KRN"/>
                 <constraint firstItem="qz1-D5-oWA" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="JhX-mm-nim"/>
+                <constraint firstItem="0hy-0Y-fng" firstAttribute="centerY" secondItem="0oh-oQ-IaQ" secondAttribute="centerY" id="NNh-bo-ums"/>
                 <constraint firstItem="qz1-D5-oWA" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="box-vj-Y9G"/>
+                <constraint firstItem="0hy-0Y-fng" firstAttribute="width" secondItem="0oh-oQ-IaQ" secondAttribute="width" multiplier="1.125" id="eVK-u9-9Yx"/>
                 <constraint firstItem="0oh-oQ-IaQ" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" constant="-8" id="jhy-db-2cL"/>
                 <constraint firstItem="0oh-oQ-IaQ" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" constant="-11" id="o9j-jg-mC2"/>
             </constraints>
@@ -70,6 +79,7 @@
         </view>
     </objects>
     <resources>
+        <image name="mapUserBorder" width="64" height="64"/>
         <image name="markerShadow" width="405" height="410"/>
     </resources>
 </document>

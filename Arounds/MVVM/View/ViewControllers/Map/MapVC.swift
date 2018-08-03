@@ -14,7 +14,7 @@ class ARClusterRenderer: GMUDefaultClusterRenderer {
     
     override func shouldRender(as cluster: GMUCluster, atZoom zoom: Float) -> Bool {
         
-        return cluster.count >= 2 && zoom >= 7
+        return cluster.count >= 2 && zoom >= 2
     }
     
 }
@@ -34,9 +34,11 @@ class MapVC: UIViewController,CLLocationManagerDelegate {
     
     let isClostering: Bool = true
     let isCustom: Bool = true
-    
+    var lastCoordinate:CLLocationCoordinate2D?
     lazy var filter = ARUserFilter()
-    lazy var makeRadarChat = ARMakeRadarChat.loadFromNib(filter: filter, mapViewModel: viewModel)
+    lazy var mapFilter = ARUserFilter()
+
+    lazy var makeRadarChat = ARMakeRadarChat.loadFromNib(filter: filter)
     lazy var clusteredUser = ARClusteredUsers.loadFromNib()
     
     override func viewDidLoad() {
@@ -57,91 +59,114 @@ class MapVC: UIViewController,CLLocationManagerDelegate {
             var iconGenerator : GMUDefaultClusterIconGenerator!
             if isCustom {
                 let image = UIImage.init(named: "closter") ?? UIImage()
-                iconGenerator = GMUDefaultClusterIconGenerator.init(buckets: [2,4,6,8,10,15,20,25,30,35,40,45,50,80,100], backgroundImages: [image,image,image,image,image,image,image,image,image,image,image,image,image,image,image])
+                iconGenerator = GMUDefaultClusterIconGenerator.init(buckets: [1000000], backgroundImages: [image])
             } else {
                 iconGenerator = GMUDefaultClusterIconGenerator()
             }
             
-            let algoritm = GMUGridBasedClusterAlgorithm()
+            let algoritm = GMUNonHierarchicalDistanceBasedAlgorithm()
             let render = ARClusterRenderer.init(mapView: mapView, clusterIconGenerator: iconGenerator)
             render.delegate = self
             clusterManager = GMUClusterManager.init(map: mapView, algorithm: algoritm, renderer: render)
             clusterManager.cluster()
             clusterManager.setDelegate(self, mapDelegate: self)
         }
+        mapView.settings.allowScrollGesturesDuringRotateOrZoom = false
+        
         // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         updateUI()
+        locManager.startUpdatingLocation()
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return false
     }
     
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
+            //            mapView.animate(toZoom: 15)
+            MapUtil.setRadius(radius: Double(self.mapFilter.distance), withCity: location.coordinate, InMapView: mapView)
             mapView.animate(toLocation: location.coordinate)
-            mapView.animate(toZoom: 15)
+            lastCoordinate = location.coordinate
             locManager.stopUpdatingLocation()
+            getUsers()
+
         }
     }
     
-    @IBAction func didClickChatButton(_ sender: UIButton) {
-        makeRadarChat.show()
-        makeRadarChat.didCloseSadarChat = {[weak self] filter in
-            self?.filter = filter
-            self?.updateUI()
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .denied {
+            
         }
+    }
+
+    @IBAction func didClickChatButton(_ sender: UIButton) {
+        
+        if UserDefaults.standard.bool(forKey: "kAgreeTermsOfUse") != true {
+            let spamView = NonSpamView.loadFromNib()
+            spamView.didCloseSpamView = {
+                self.openRadarChat()
+            }
+            spamView.show()
+            return
+        }
+        self.openRadarChat()
+    }
+    
+    func openRadarChat() {
+        makeRadarChat.show()
+//        makeRadarChat.didCloseSadarChat = {[weak self] filter in
+//            self?.filter = filter
+//            self?.updateUI()
+//        }
     }
     
     func updateUI() {
-        distanceSlider.selectedDistance = CGFloat(filter.distance)
+        distanceSlider.selectedDistance = CGFloat(mapFilter.distance)
+        distanceSlider.didEndSlide?(distanceSlider.selectedDistance)
     }
     
     func listeners() {
         distanceSlider.didEndSlide = { [weak self] value in
             guard let weakSelf = self else {return}
-            weakSelf.filter.distance = Int(value)
-            weakSelf.viewModel.getUsers(by: weakSelf.filter, completion: {[weak self] (users) in
-                //
-                self?.markerArray.removeAll()
-                self?.closteringMarkerArray.removeAll()
-                self?.clusterManager.clearItems()
-                //
-                var mixedUser = users
-                if !(self?.closteringMarkerArray.contains(where: { (marker) -> Bool in
-                    if  let currentUserID = ARUser.currentUser?.id {
-                        return marker.name == currentUserID
-                    }
-                    return false
-                }))! {
-                    mixedUser.append(ARUser.currentUser!)
-                }
-                self?.drawClosteringUsers(users: mixedUser)
-                
-            })
+            
+            weakSelf.locManager.startUpdatingLocation()
+            weakSelf.mapFilter.distance = Int(value)
+            weakSelf.getUsers()
         }
     }
     
-    //    func listeners() {
-    //        distanceSlider.didEndSlide = { [weak self] value in
-    //            guard let weakSelf = self else {return}
-    //            weakSelf.filter.distance = Int(value)
-    //            weakSelf.viewModel.getUsers(by: weakSelf.filter, completion: {[weak self] (users) in
-    //                var mixedUser = users
-    //                if !(self?.markerArray.contains(where: { (marker) -> Bool in
-    //                    if let userData = marker.userData as? [String:Any], let savedID = userData["userID"] as? String, let currentUserID = ARUser.currentUser?.id {
-    //                        return savedID == currentUserID
-    //                    }
-    //                    return false
-    //                }))! {
-    //                    mixedUser.append(ARUser.currentUser!)
-    //                }
-    ////                self?.drawClosteringUsers(users: mixedUser)
-    //
-    //                self?.drawUsers(users: mixedUser)
-    //            })
-    //        }
-    //    }
+    func getUsers() {
+        let filter = ARUserFilter()
+        filter.distance = Int(distanceSlider.selectedDistance)
+        viewModel.getUsers(by: filter, completion: {[weak self] (users) in
+            //
+            let rangeDate = Calendar.current.date(byAdding: .minute, value: -5, to: Date()) ?? Date()
+            let onlineUsers = users.filter({ (obj) -> Bool in
+                return obj.lastOnlone ?? Date() > rangeDate
+            })
+            //
+            self?.markerArray.removeAll()
+            self?.closteringMarkerArray.removeAll()
+            self?.clusterManager.clearItems()
+            //
+            var mixedUser = onlineUsers
+            if !(self?.closteringMarkerArray.contains(where: { (marker) -> Bool in
+                if  let currentUserID = ARUser.currentUser?.id {
+                    return marker.name == currentUserID
+                }
+                return false
+            }))! {
+                mixedUser.append(ARUser.currentUser!)
+            }
+            self?.drawClosteringUsers(users: mixedUser)
+            
+        })
+    }
     
     func drawUsers(users:[ARUser]) {
         for user in users {
@@ -149,7 +174,10 @@ class MapVC: UIViewController,CLLocationManagerDelegate {
             markerArray.append(marker)
             marker.userData = ["userID":user.id];
             //            marker.icon = UIImage.init(named: "femaleAvatar")
-            marker.icon = ARMarker.loadFromNib(with: user).toImage()
+            let asMarker = ARMarker.loadFromNib(with: user)
+            marker.iconView?.frame.size = asMarker.frame.size
+            marker.groundAnchor = CGPoint.init(x: 0.5, y: 1.0)
+            marker.iconView?.addSubview(asMarker)
             marker.position = CLLocationCoordinate2D(latitude: user.coordinate?.lat ?? 0, longitude: user.coordinate?.lng ?? 0)
             marker.map = mapView
         }
@@ -166,10 +194,10 @@ class MapVC: UIViewController,CLLocationManagerDelegate {
             //            marker.position = CLLocationCoordinate2D(latitude: user.coordinate?.lat ?? 0, longitude: user.coordinate?.lng ?? 0)
             //                        marker.map = mapView
             //
-            let image = ARMarker.loadFromNib(with: user).toImage() ?? UIImage(named: "femaleAvatar") ?? UIImage()
+            let image = ARMarker.loadFromNib(with: user).toImage()
             let item = POIItem.init(position: CLLocationCoordinate2D(latitude: user.coordinate?.lat ?? 0,
                                                                      longitude: user.coordinate?.lng ?? 0)
-                , name: user.id ?? "", image: image)
+                , name: user.id ?? "", image: image!)
             
             closteringMarkerArray.append(item)
             clusterManager.add(item)
@@ -197,14 +225,13 @@ extension MapVC: GMSMapViewDelegate, GMUClusterManagerDelegate, GMUClusterRender
     }
     
     func clusterManager(_ clusterManager: GMUClusterManager, didTap cluster: GMUCluster) -> Bool {
-        print(cluster)
         
         let users = cluster.items.map { (item) -> ARUser? in
             if let item = item as? POIItem, let user = viewModel.nearestUser.filter({$0.id == item.name}).first {
                 return user
             }
             return nil
-        }.filter({$0 != nil})
+            }.filter({$0 != nil})
         
         clusteredUser.show(with: users as! [ARUser], onVC: self)
         return true
@@ -219,17 +246,20 @@ extension MapVC: GMSMapViewDelegate, GMUClusterManagerDelegate, GMUClusterRender
         return true
     }
     
+    func shouldRender(as cluster: GMUCluster, atZoom zoom: Float) -> Bool {
+        return true
+    }
+
     func renderer(_ renderer: GMUClusterRenderer, markerFor object: Any) -> GMSMarker? {
         if let item = object as? POIItem {
             let marker = GMSMarker.init(position: item.position)
             marker.icon = item.image
-            print("marker \(item.name)")
-            
+            marker.groundAnchor = CGPoint.init(x: 0.5, y: 0.5)
             return marker
         }
-        let cluster = GMSMarker.init()
-        cluster.icon = UIImage.init(named: "closter") ?? UIImage()
-        return cluster
+        //        let cluster = GMSMarker.init()
+        //        cluster.icon = UIImage.init(named: "closter") ?? UIImage()
+        return nil
     }
     
 }
@@ -244,4 +274,49 @@ class POIItem:NSObject, GMUClusterItem {
         self.name = name
         self.image = image
     }
+}
+
+extension GMSCameraUpdate {
+    
+    static func fit(coordinate: CLLocationCoordinate2D, radius: Double) -> GMSCameraUpdate {
+        var leftCoordinate = coordinate
+        var rigthCoordinate = coordinate
+        
+        let region = MKCoordinateRegionMakeWithDistance(coordinate, radius, radius)
+        let span = region.span
+        
+        leftCoordinate.latitude = coordinate.latitude - span.latitudeDelta
+        leftCoordinate.longitude = coordinate.longitude - span.longitudeDelta
+        rigthCoordinate.latitude = coordinate.latitude + span.latitudeDelta
+        rigthCoordinate.longitude = coordinate.longitude + span.longitudeDelta
+        
+        let bounds = GMSCoordinateBounds(coordinate: leftCoordinate, coordinate: rigthCoordinate)
+        let update = GMSCameraUpdate.fit(bounds, withPadding: -15.0)
+        
+        return update
+    }
+    
+}
+
+
+class MapUtil {
+    
+    class func translateCoordinate(coordinate: CLLocationCoordinate2D, metersLat: Double,metersLong: Double) -> (CLLocationCoordinate2D) {
+        var tempCoord = coordinate
+        
+        let tempRegion = MKCoordinateRegionMakeWithDistance(coordinate, metersLat, metersLong)
+        let tempSpan = tempRegion.span
+        
+        tempCoord.latitude = coordinate.latitude + tempSpan.latitudeDelta
+        tempCoord.longitude = coordinate.longitude + tempSpan.longitudeDelta
+        
+        return tempCoord
+    }
+    
+    class func setRadius(radius: Double,withCity city: CLLocationCoordinate2D,InMapView mapView: GMSMapView) {
+        
+        let update = GMSCameraUpdate.fit(coordinate: city, radius: radius)    // padding set to 5.0
+        mapView.moveCamera(update)
+    }
+    
 }

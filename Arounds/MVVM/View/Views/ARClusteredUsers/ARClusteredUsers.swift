@@ -5,8 +5,7 @@
 //  Created by Samvel Pahlevanyan on 5/26/18.
 //  Copyright © 2018 Samvel Pahlevanyan. All rights reserved.
 //
-
-import RangeSeekSlider
+import TTRangeSlider
 import UIKit
 
 fileprivate let cellIdent = "usersCell"
@@ -18,12 +17,14 @@ class ARClusteredUsers: UIView {
     }
     var finteredUser = [ARUser]()
     var vc: UIViewController?
+    @IBOutlet weak var felmaleView: ARBorderedButton!
+    @IBOutlet weak var maleView: ARBorderedButton!
     @IBOutlet weak var maleButton: UIButton!
     @IBOutlet weak var countOfUsers: UILabel!
     @IBOutlet weak var femaleButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var filterViewHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var ageFilterSlider: RangeSeekSlider!
+    @IBOutlet weak var rangeSlider: TTRangeSlider!
     
     class func loadFromNib() -> ARClusteredUsers {
         let sharedView = UINib.init(nibName: "ARClusteredUsers", bundle: nil).instantiate(withOwner: nil, options: nil).first as! ARClusteredUsers
@@ -35,10 +36,11 @@ class ARClusteredUsers: UIView {
         sharedView.tableView.rowHeight = UITableViewAutomaticDimension
         sharedView.tableView.estimatedRowHeight = 100
         
-        sharedView.setSelected(button: sharedView.maleButton)
-        sharedView.setSelected(button: sharedView.femaleButton)
-        sharedView.ageFilterSlider.delegate = sharedView
-        
+        sharedView.setDeselected(button: sharedView.maleButton)
+        sharedView.setDeselected(button: sharedView.femaleButton)
+
+        sharedView.rangeSlider.delegate = sharedView
+//        sharedView.set
         return sharedView
     }
     
@@ -46,6 +48,8 @@ class ARClusteredUsers: UIView {
         self.users = newUsers
         onVC.view.addSubview(self)
         self.vc = onVC
+        filterUser()
+        finteredUser = users
         tableView.reloadData()
     }
     
@@ -60,8 +64,13 @@ class ARClusteredUsers: UIView {
             self?.layoutIfNeeded()
         }
         if sender.isSelected {
-            filterUser()
+              setDefoult()
+//            filterUser()
         } else {
+//            finteredUser = finteredUser
+        }
+        if sender.isSelected == false {
+            
             finteredUser = users
         }
         tableView.reloadData()
@@ -71,25 +80,37 @@ class ARClusteredUsers: UIView {
         if sender.isSelected {
             if femaleButton.isSelected == false {return}
             setDeselected(button: sender)
+            maleView.borderColor = UIColor.withHex("EDECEE")
         } else {
             setSelected(button: sender)
+            maleView.borderColor = .clear
         }
         filterUser()
         tableView.reloadData()
-        
+
+    }
+    
+    func setDefoult() {
+        rangeSlider.selectedMaximum = 99
+        rangeSlider.selectedMinimum = 14
+
+        setDeselected(button: maleButton)
+        setDeselected(button: femaleButton)
     }
     
     @IBAction func femaleButtonClick(_ sender: UIButton) {
         if sender.isSelected {
             if maleButton.isSelected == false {return}
             setDeselected(button: sender)
+            felmaleView.borderColor = UIColor.withHex("EDECEE")
         } else {
             setSelected(button: sender)
+            felmaleView.borderColor = .clear
         }
         filterUser()
         tableView.reloadData()
     }
-    
+
     func filterUser() {
         finteredUser = users.filter({ [weak self] (user) -> Bool in
             
@@ -107,34 +128,38 @@ class ARClusteredUsers: UIView {
             // filter by age
             
             let components = Calendar.current.dateComponents([.year], from: user.birtDay ?? Date(), to: Date())
-            if components.year ?? 0 < Int(self?.ageFilterSlider.selectedMinValue ?? 0) ||
-                components.year ?? 0 > Int(self?.ageFilterSlider.selectedMaxValue ?? 0) {
+            if components.year ?? 0 <= Int(self?.rangeSlider.selectedMinimum ?? 0) ||
+                components.year ?? 0 >= Int(self?.rangeSlider.selectedMaximum ?? 0) {
                 return false
             }
+            
             //
             return true
         })
         //        tableView.reloadData()
     }
     
-    
+  
     func setSelected(button:UIButton) {
         button.isSelected = true
-        button.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+        button.backgroundColor = UIColor.withHex("F94865")
+        button.tintColor = .white
     }
     
     func setDeselected(button:UIButton) {
         button.isSelected = false
-        button.backgroundColor = UIColor.clear
+        button.backgroundColor = .white
+        button.tintColor = .gray
     }
     
 }
 
-extension ARClusteredUsers: RangeSeekSliderDelegate {
+extension ARClusteredUsers: TTRangeSliderDelegate {
     
-    func didEndTouches(in slider: RangeSeekSlider) {
+    func didEndTouches(in sender: TTRangeSlider!) {
         filterUser()
         tableView.reloadData()
+
     }
     
 }

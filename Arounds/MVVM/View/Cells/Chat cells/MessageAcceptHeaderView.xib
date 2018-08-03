@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="MontserratAlternates-Regular.ttf">
+            <string>MontserratAlternates-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MessageAcceptHeaderView" id="nCA-L3-wAL" customClass="MessageAcceptHeaderView" customModule="Arounds" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aH1-X3-KQA">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nhd-J5-W3I" customClass="ARBorderedButton" customModule="Arounds" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="188" height="50"/>
+                            <fontDescription key="fontDescription" name="MontserratAlternates-Regular" family="Montserrat Alternates" pointSize="12"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="14" maxX="20" maxY="15"/>
+                            <state key="normal" title="Отклонить" image="x_bold_icon">
+                                <color key="titleColor" red="0.41568627450000001" green="0.41568627450000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" red="0.92941176469999998" green="0.92549019610000005" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NV9-qz-Ocu" customClass="ARBorderedButton" customModule="Arounds" customModuleProvider="target">
+                            <rect key="frame" x="187" y="0.0" width="188" height="50"/>
+                            <fontDescription key="fontDescription" name="MontserratAlternates-Regular" family="Montserrat Alternates" pointSize="12"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="14" maxX="20" maxY="12"/>
+                            <state key="normal" title="Принять" image="accept_icon">
+                                <color key="titleColor" red="0.41568627450000001" green="0.41568627450000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" red="0.92941176469999998" green="0.92549019610000005" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="oNx-Ht-PZH" firstAttribute="bottom" secondItem="nhd-J5-W3I" secondAttribute="bottom" id="1EY-nV-lvk"/>
+                        <constraint firstItem="nhd-J5-W3I" firstAttribute="leading" secondItem="oNx-Ht-PZH" secondAttribute="leading" id="7CE-0f-cxp"/>
+                        <constraint firstItem="nhd-J5-W3I" firstAttribute="top" secondItem="oNx-Ht-PZH" secondAttribute="top" id="DHw-S1-9rw"/>
+                        <constraint firstItem="NV9-qz-Ocu" firstAttribute="top" secondItem="oNx-Ht-PZH" secondAttribute="top" id="PwH-UY-0Iu"/>
+                        <constraint firstItem="nhd-J5-W3I" firstAttribute="width" secondItem="NV9-qz-Ocu" secondAttribute="width" id="fjF-Sd-ZAt"/>
+                        <constraint firstItem="NV9-qz-Ocu" firstAttribute="leading" secondItem="nhd-J5-W3I" secondAttribute="trailing" constant="-1" id="mBQ-0U-FBP"/>
+                        <constraint firstItem="oNx-Ht-PZH" firstAttribute="trailing" secondItem="NV9-qz-Ocu" secondAttribute="trailing" id="o4S-rN-qwq"/>
+                        <constraint firstItem="oNx-Ht-PZH" firstAttribute="bottom" secondItem="NV9-qz-Ocu" secondAttribute="bottom" id="yAS-Zc-2gG"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="oNx-Ht-PZH"/>
+                    <connections>
+                        <outlet property="acceptButton" destination="NV9-qz-Ocu" id="Dwp-ki-6YZ"/>
+                        <outlet property="declineButton" destination="nhd-J5-W3I" id="Pjj-NI-tdw"/>
+                    </connections>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="aH1-X3-KQA" firstAttribute="leading" secondItem="nCA-L3-wAL" secondAttribute="leading" id="EJd-Y1-nMQ"/>
+                <constraint firstItem="aH1-X3-KQA" firstAttribute="top" secondItem="eSE-Ag-HCX" secondAttribute="top" id="MEP-DC-pzr"/>
+                <constraint firstItem="eSE-Ag-HCX" firstAttribute="bottom" secondItem="aH1-X3-KQA" secondAttribute="bottom" id="ORY-m8-Ezn"/>
+                <constraint firstItem="eSE-Ag-HCX" firstAttribute="trailing" secondItem="aH1-X3-KQA" secondAttribute="trailing" id="v48-CQ-1lH"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="eSE-Ag-HCX"/>
+            <point key="canvasLocation" x="56" y="47"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <image name="accept_icon" width="27" height="19"/>
+        <image name="x_bold_icon" width="15" height="15"/>
+    </resources>
+</document>
