@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="MontserratAlternates-Bold.ttf">
+            <string>MontserratAlternates-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="FeedBack" customModule="Arounds" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="guL-93-AzL">
+                    <rect key="frame" x="20" y="83.5" width="280" height="421.5"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="REe-cx-n2h">
+                            <rect key="frame" x="0.0" y="82" width="280" height="1"/>
+                            <color key="backgroundColor" red="0.92941176469999998" green="0.92549019610000005" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="WUJ-8C-Z05"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3g-3m-5BO">
+                            <rect key="frame" x="240" y="20" width="20" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="1aU-Lw-eIk"/>
+                                <constraint firstAttribute="width" secondItem="r3g-3m-5BO" secondAttribute="height" multiplier="1:1" id="Qyk-RW-h8T"/>
+                            </constraints>
+                            <state key="normal" title="Button" image="x_icon"/>
+                            <connections>
+                                <action selector="closeButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="rCX-rp-7Ow"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEi-pu-ahS">
+                            <rect key="frame" x="20" y="13" width="173" height="49"/>
+                            <string key="text">Расскажи, что 
+смутило?</string>
+                            <fontDescription key="fontDescription" name="MontserratAlternates-Bold" family="Montserrat Alternates" pointSize="20"/>
+                            <color key="textColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2J-ID-pcw" customClass="ARGradientedButton" customModule="Arounds" customModuleProvider="target">
+                            <rect key="frame" x="20" y="341.5" width="240" height="50"/>
+                            <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="oFU-uR-ok2"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="MontserratAlternates-Bold" family="Montserrat Alternates" pointSize="11"/>
+                            <state key="normal" title="Оценить">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="startLocation">
+                                    <real key="value" value="0.10000000000000001"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="endLocation">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="diagonalMode" value="NO"/>
+                                <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                    <color key="value" red="0.95294117649999999" green="0.31764705879999999" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                    <color key="value" red="1" green="0.2470588235" blue="0.70588235290000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="horizontalMode" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="acceptButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="qYM-h4-teL"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пожалуйста, оцени Arounds, чтобы мы смогли сделать наше приложение лучше:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAN-zt-DIb">
+                            <rect key="frame" x="20" y="103" width="240" height="26.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                            <color key="textColor" red="0.53333333333333333" green="0.53333333333333333" blue="0.61176470588235299" alpha="0.98777290239726023" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="eMQ-cs-75C">
+                            <rect key="frame" x="20" y="149.5" width="148.5" height="27"/>
+                            <subviews>
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tx6-Tl-xDH">
+                                    <rect key="frame" x="0.0" y="0.0" width="25.5" height="27"/>
+                                    <gestureRecognizers/>
+                                    <color key="tintColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="star"/>
+                                    <state key="selected" image="star"/>
+                                    <connections>
+                                        <action selector="starButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="FpC-SM-DxE"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFh-jo-n8z">
+                                    <rect key="frame" x="30.5" y="0.0" width="26" height="27"/>
+                                    <gestureRecognizers/>
+                                    <color key="tintColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="star"/>
+                                    <state key="selected" image="star"/>
+                                    <connections>
+                                        <action selector="starButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="i00-XB-92b"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5TC-tB-wn1">
+                                    <rect key="frame" x="61.5" y="0.0" width="25.5" height="27"/>
+                                    <gestureRecognizers/>
+                                    <color key="tintColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="star"/>
+                                    <state key="selected" image="star"/>
+                                    <connections>
+                                        <action selector="starButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="Nd1-q2-kIV"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YWq-mt-mHA">
+                                    <rect key="frame" x="92" y="0.0" width="26" height="27"/>
+                                    <gestureRecognizers/>
+                                    <color key="tintColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="star"/>
+                                    <state key="selected" image="star"/>
+                                    <connections>
+                                        <action selector="starButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="bjp-qb-QHo"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lxV-ql-J78">
+                                    <rect key="frame" x="123" y="0.0" width="25.5" height="27"/>
+                                    <gestureRecognizers/>
+                                    <color key="tintColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="star"/>
+                                    <state key="selected" image="star"/>
+                                    <connections>
+                                        <action selector="starButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="tz1-PA-zpG"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="eMQ-cs-75C" secondAttribute="height" multiplier="5.5:1" id="BdY-zE-QGT"/>
+                                <constraint firstAttribute="height" constant="27" id="VkY-Ea-i1Z"/>
+                            </constraints>
+                        </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A71-uz-InD" customClass="ARTextView" customModule="Arounds" customModuleProvider="target">
+                            <rect key="frame" x="20" y="196.5" width="240" height="115"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="115" id="CFT-ud-vFN"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" red="0.92941176470588238" green="0.92549019607843142" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Оставить отзыв..."/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="max">
+                                    <integer key="value" value="100"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="gAN-zt-DIb" firstAttribute="leading" secondItem="guL-93-AzL" secondAttribute="leading" constant="20" id="2NG-8Y-zjP"/>
+                        <constraint firstAttribute="trailing" secondItem="l2J-ID-pcw" secondAttribute="trailing" constant="20" id="82C-xo-HBr"/>
+                        <constraint firstItem="oEi-pu-ahS" firstAttribute="top" secondItem="r3g-3m-5BO" secondAttribute="top" constant="-7" id="82x-CN-tHC"/>
+                        <constraint firstAttribute="trailing" secondItem="gAN-zt-DIb" secondAttribute="trailing" constant="20" id="98I-cb-cCj"/>
+                        <constraint firstAttribute="trailing" secondItem="A71-uz-InD" secondAttribute="trailing" constant="20" id="AzI-ga-cbQ"/>
+                        <constraint firstItem="REe-cx-n2h" firstAttribute="top" secondItem="oEi-pu-ahS" secondAttribute="bottom" constant="20" id="Dc3-Rt-K4o"/>
+                        <constraint firstItem="REe-cx-n2h" firstAttribute="leading" secondItem="guL-93-AzL" secondAttribute="leading" id="Dvs-lw-fLx"/>
+                        <constraint firstItem="A71-uz-InD" firstAttribute="top" secondItem="eMQ-cs-75C" secondAttribute="bottom" constant="20" id="GVN-Lw-g9A"/>
+                        <constraint firstItem="eMQ-cs-75C" firstAttribute="leading" secondItem="guL-93-AzL" secondAttribute="leading" constant="20" id="TM5-XW-Euu"/>
+                        <constraint firstAttribute="bottom" secondItem="l2J-ID-pcw" secondAttribute="bottom" constant="30" id="W3p-Ic-QeD"/>
+                        <constraint firstItem="A71-uz-InD" firstAttribute="leading" secondItem="guL-93-AzL" secondAttribute="leading" constant="20" id="Wo4-bJ-DwQ"/>
+                        <constraint firstAttribute="trailing" secondItem="REe-cx-n2h" secondAttribute="trailing" id="ayz-oP-YxP"/>
+                        <constraint firstItem="gAN-zt-DIb" firstAttribute="top" secondItem="REe-cx-n2h" secondAttribute="bottom" constant="20" id="b1L-W8-cZl"/>
+                        <constraint firstItem="eMQ-cs-75C" firstAttribute="top" secondItem="gAN-zt-DIb" secondAttribute="bottom" constant="20" id="ckK-4S-6Md"/>
+                        <constraint firstItem="oEi-pu-ahS" firstAttribute="leading" secondItem="guL-93-AzL" secondAttribute="leading" constant="20" id="gHy-JK-xYt"/>
+                        <constraint firstAttribute="trailing" secondItem="r3g-3m-5BO" secondAttribute="trailing" constant="20" id="opX-QP-DhA"/>
+                        <constraint firstItem="l2J-ID-pcw" firstAttribute="top" secondItem="A71-uz-InD" secondAttribute="bottom" constant="30" id="pee-2K-OMs"/>
+                        <constraint firstItem="r3g-3m-5BO" firstAttribute="top" secondItem="guL-93-AzL" secondAttribute="top" constant="20" id="qta-oZ-2fF"/>
+                        <constraint firstItem="l2J-ID-pcw" firstAttribute="leading" secondItem="guL-93-AzL" secondAttribute="leading" constant="20" id="uB9-B9-35b"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="guL-93-AzL" secondAttribute="trailing" constant="20" id="4Km-ok-5Aw"/>
+                <constraint firstItem="guL-93-AzL" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="j6s-P0-hyH"/>
+                <constraint firstItem="guL-93-AzL" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="o1Z-ff-WE9"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="bottomConstraint" destination="o1Z-ff-WE9" id="GR6-vY-iDy"/>
+                <outlet property="sendButton" destination="l2J-ID-pcw" id="5sc-AL-hKy"/>
+                <outlet property="shadowView" destination="guL-93-AzL" id="jLs-fE-uQj"/>
+                <outlet property="textView" destination="A71-uz-InD" id="1lP-Uy-99F"/>
+                <outletCollection property="stars" destination="tx6-Tl-xDH" collectionClass="NSMutableArray" id="aQA-e5-2ls"/>
+                <outletCollection property="stars" destination="sFh-jo-n8z" collectionClass="NSMutableArray" id="Btv-2w-qMS"/>
+                <outletCollection property="stars" destination="5TC-tB-wn1" collectionClass="NSMutableArray" id="YcG-SB-lIm"/>
+                <outletCollection property="stars" destination="YWq-mt-mHA" collectionClass="NSMutableArray" id="sEm-eG-CGf"/>
+                <outletCollection property="stars" destination="lxV-ql-J78" collectionClass="NSMutableArray" id="Pap-rt-UzF"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="star" width="51" height="49"/>
+        <image name="x_icon" width="36" height="36"/>
+    </resources>
+</document>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="OnlineOffline" customModule="Arounds" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="onlainLocationAnimation" translatesAutoresizingMaskIntoConstraints="NO" id="2cs-44-bHL">
+                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="lXC-Vb-0T2"/>
+                        <constraint firstAttribute="width" secondItem="2cs-44-bHL" secondAttribute="height" multiplier="1:1" id="qwR-fk-Lax"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b4E-eB-oxF" customClass="ARBorderedView" customModule="Arounds" customModuleProvider="target">
+                    <rect key="frame" x="6" y="6" width="48" height="48"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="offlineLocation" highlightedImage="onlineLocation" translatesAutoresizingMaskIntoConstraints="NO" id="ZFR-aH-SJZ">
+                            <rect key="frame" x="14" y="14" width="20" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="ZFR-aH-SJZ" secondAttribute="height" multiplier="1:1" id="2Nn-6r-PqT"/>
+                                <constraint firstAttribute="height" constant="20" id="FEv-Tv-rpB"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="ZFR-aH-SJZ" firstAttribute="centerY" secondItem="b4E-eB-oxF" secondAttribute="centerY" id="6YN-lS-icY"/>
+                        <constraint firstItem="ZFR-aH-SJZ" firstAttribute="centerX" secondItem="b4E-eB-oxF" secondAttribute="centerX" id="9yd-uc-X5Q"/>
+                        <constraint firstAttribute="height" constant="48.5" id="EfI-cR-Xjq"/>
+                        <constraint firstAttribute="width" secondItem="b4E-eB-oxF" secondAttribute="height" multiplier="1:1" id="JQS-Po-Adh"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UYj-St-Ve0">
+                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                    <connections>
+                        <action selector="didClickButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="Q7k-1h-IFB"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="UYj-St-Ve0" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="9ba-Ye-LYX"/>
+                <constraint firstItem="2cs-44-bHL" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="IqW-RG-ZrR"/>
+                <constraint firstItem="b4E-eB-oxF" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="MSy-Vb-1TA"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="UYj-St-Ve0" secondAttribute="trailing" id="Tla-io-4hZ"/>
+                <constraint firstItem="2cs-44-bHL" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="epd-b0-i9m"/>
+                <constraint firstItem="UYj-St-Ve0" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ggZ-YN-QN9"/>
+                <constraint firstItem="b4E-eB-oxF" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="lAU-7T-d4b"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="UYj-St-Ve0" secondAttribute="bottom" id="qKS-qp-JiM"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="animationConsrataint" destination="lXC-Vb-0T2" id="quY-WH-jIP"/>
+                <outlet property="animationImage" destination="2cs-44-bHL" id="Su1-yw-eod"/>
+                <outlet property="licationIcon" destination="ZFR-aH-SJZ" id="V0v-Ju-bKC"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="offlineLocation" width="32" height="40"/>
+        <image name="onlainLocationAnimation" width="124" height="124"/>
+        <image name="onlineLocation" width="32" height="40"/>
+    </resources>
+</document>

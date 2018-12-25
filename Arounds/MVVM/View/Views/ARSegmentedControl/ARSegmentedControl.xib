@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="MontserratAlternates-Regular.ttf">
+            <string>MontserratAlternates-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ARSegmentedControl" customModule="Arounds" customModuleProvider="target">
+            <connections>
+                <outlet property="firstButton" destination="4Zx-vE-5ti" id="iFX-Ah-9O1"/>
+                <outlet property="secoundButton" destination="ZOH-yX-7RH" id="6k0-Au-Ujf"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ARBorderedView" customModule="Arounds" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="340" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q6C-8Y-qvH">
+                    <rect key="frame" x="169" y="0.0" width="2" height="50"/>
+                    <color key="backgroundColor" red="0.92941176469999998" green="0.92549019610000005" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="2" id="VDh-j9-GCS"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" tag="2" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Zx-vE-5ti">
+                    <rect key="frame" x="0.0" y="0.0" width="169" height="50"/>
+                    <fontDescription key="fontDescription" name="MontserratAlternates-Regular" family="Montserrat Alternates" pointSize="14"/>
+                    <color key="tintColor" red="0.97647058819999999" green="0.28235294119999998" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <inset key="imageEdgeInsets" minX="-20" minY="15" maxX="0.0" maxY="15"/>
+                    <state key="normal" title="девушка" image="female_icon">
+                        <color key="titleColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="selected">
+                        <color key="titleColor" red="0.97647058823529409" green="0.28235294117647058" blue="0.396078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="didClickButton:" destination="-1" eventType="touchUpInside" id="rNU-Pb-Mc8"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="1" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZOH-yX-7RH">
+                    <rect key="frame" x="171" y="0.0" width="169" height="50"/>
+                    <fontDescription key="fontDescription" name="MontserratAlternates-Regular" family="Montserrat Alternates" pointSize="14"/>
+                    <color key="tintColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <inset key="imageEdgeInsets" minX="-20" minY="15" maxX="0.0" maxY="15"/>
+                    <state key="normal" title="парень" image="male_icon">
+                        <color key="titleColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="selected" image="male_icon">
+                        <color key="titleColor" red="0.97647058819999999" green="0.28235294119999998" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="didClickButton:" destination="-1" eventType="touchUpInside" id="i4s-7g-3oO"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="4Zx-vE-5ti" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="3Ib-Yk-o43"/>
+                <constraint firstItem="Q6C-8Y-qvH" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="AEN-23-GO6"/>
+                <constraint firstItem="4Zx-vE-5ti" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="GDH-zP-N8D"/>
+                <constraint firstItem="Q6C-8Y-qvH" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="H0w-Kc-Iz0"/>
+                <constraint firstItem="ZOH-yX-7RH" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="IyQ-TK-oDS"/>
+                <constraint firstItem="ZOH-yX-7RH" firstAttribute="leading" secondItem="Q6C-8Y-qvH" secondAttribute="trailing" id="Jjm-SJ-UKw"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="4Zx-vE-5ti" secondAttribute="bottom" id="WfC-ur-S9D"/>
+                <constraint firstItem="Q6C-8Y-qvH" firstAttribute="leading" secondItem="4Zx-vE-5ti" secondAttribute="trailing" id="aYa-8e-uh8"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ZOH-yX-7RH" secondAttribute="bottom" id="iNW-Lq-HhC"/>
+                <constraint firstItem="ZOH-yX-7RH" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="iyG-t4-cE4"/>
+                <constraint firstAttribute="bottom" secondItem="Q6C-8Y-qvH" secondAttribute="bottom" id="s5D-QP-usO"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="422" y="-417"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="female_icon" width="14" height="31"/>
+        <image name="male_icon" width="11" height="31"/>
+    </resources>
+</document>

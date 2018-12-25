@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F4A71676FE8EECF4ADE1EFCFEB625ECE"
+               BlueprintIdentifier = "1BA35E041B74FFB699732AED463A8559"
                BlueprintName = "InputMask"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "InputMask.framework">

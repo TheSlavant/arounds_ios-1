@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CF1A9681D179383284339604652317DA"
+               BlueprintIdentifier = "300DC728A175D38A9F0841ADFFB3E96C"
                BlueprintName = "GCCountryPicker"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "GCCountryPicker.framework">

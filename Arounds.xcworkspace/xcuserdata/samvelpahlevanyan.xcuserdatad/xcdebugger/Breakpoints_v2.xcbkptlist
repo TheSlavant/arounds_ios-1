@@ -16,16 +16,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Arounds/MVVM/View/ViewControllers/ChatList/ChatListVC.swift"
-            timestampString = "554554698.3030961"
+            filePath = "Arounds/MVVM/View/ViewControllers/Home/HomeTabBarVC.swift"
+            timestampString = "560205411.897915"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
-            landmarkName = "textField(_:shouldChangeCharactersIn:replacementString:)"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "showEdit()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -35,13 +35,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Arounds/MVVM/View/ViewControllers/ChatList/ChatListVC.swift"
-            timestampString = "554554698.303161"
+            filePath = "Arounds/MVVM/View/ViewControllers/Map/MapVC.swift"
+            timestampString = "561927478.801378"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
-            landmarkName = "textField(_:shouldChangeCharactersIn:replacementString:)"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "didClickChatButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -51,13 +51,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Arounds/MVVM/View/Views/ARTextView/ARTextView.swift"
-            timestampString = "553713262.2432849"
+            filePath = "Arounds/Global/Helpers/LocationManager/LocationManager.swift"
+            timestampString = "560584706.518494"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "textView(_:shouldChangeTextIn:replacementText:)"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "locationManager(_:didUpdateLocations:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -67,13 +67,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Arounds/MVVM/View/Cells/RadarMessageCell.swift"
-            timestampString = "553806612.65075"
+            filePath = "Arounds/MVVM/View/ViewControllers/Map/MapVC.swift"
+            timestampString = "561927478.8017"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
-            landmarkName = "blockButton(_:)"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "locationManager(_:didChangeAuthorization:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -83,316 +83,92 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Arounds/MVVM/View/Views/ARMakeRadarChat/ARMakeRadarChat.swift"
-            timestampString = "554760686.728263"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "173"
-            endingLineNumber = "173"
-            landmarkName = "maleButtonClick(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Arounds/MVVM/View/Cells/Chat cells/MessageOutgoingCell/MessageOutgoingCell+JSQMessageView.swift"
-            timestampString = "554550877.205119"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "updateView(with:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Arounds/MVVM/View/Cells/Chat cells/MessageIncomingCell/MessageIncomingCell+JSQMessageView.swift"
-            timestampString = "554550877.2054991"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "updateView(with:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Arounds/MVVM/Model/ARUser.swift"
-            timestampString = "554382381.901265"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
-            landmarkName = "init(json:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Arounds/Global/Helpers/ARValidation.swift"
-            timestampString = "554741276.634715"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
-            landmarkName = "matches(for:in:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Arounds/MVVM/View/Views/ARClusteredUsers/ARClusteredUsers.swift"
-            timestampString = "554759543.432768"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "maleButtonClick(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Arounds/Global/Helpers/PushNotification.swift"
-            timestampString = "554550877.207857"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
-            landmarkName = "sendNotificationWithBadge(chatRoomId:username:type:handler:badge:sound:reciverToken:body:title:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Arounds/Global/Firebase/Database+Likes.swift"
-            timestampString = "554550877.208233"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "like(fromID:toID:DCS:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Arounds/MVVM/View/Views/ARMakeRadarChat/ARMakeRadarChat.swift"
-            timestampString = "554760686.7372839"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "238"
-            endingLineNumber = "238"
-            landmarkName = "send()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Array&lt;Arounds.ARUser&gt;) -&gt; () in Arounds.ARMakeRadarChat.getUsers() -&gt; ()"
-                  moduleName = "Arounds"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/samvelpahlevanyan/Documents/My%20folder/SamvelProject/arounds/Arounds/MVVM/View/Views/ARMakeRadarChat/ARMakeRadarChat.swift"
-                  timestampString = "554849438.726301"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "238"
-                  endingLineNumber = "238"
-                  offsetFromSymbolStart = "36">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in closure #1 (Swift.Array&lt;Arounds.ARUser&gt;) -&gt; () in Arounds.ARMakeRadarChat.getUsers() -&gt; ()"
-                  moduleName = "Arounds"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/samvelpahlevanyan/Documents/My%20folder/SamvelProject/arounds/Arounds/MVVM/View/Views/ARMakeRadarChat/ARMakeRadarChat.swift"
-                  timestampString = "554849438.729098"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "237"
-                  endingLineNumber = "237"
-                  offsetFromSymbolStart = "28">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Arounds/AppDelegate+Services/AppDelegateFirebase.swift"
-            timestampString = "554554698.304732"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
-            landmarkName = "application(_:open:options:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Arounds/AppDelegate+Services/AppDelegate.swift"
-            timestampString = "554977003.557115"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
-            landmarkName = "application(_:didReceiveRemoteNotification:fetchCompletionHandler:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Arounds/AppDelegate+Services/AppDelegateFirebase.swift"
-            timestampString = "554554698.305267"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
-            landmarkName = "openChat(chatRoomID:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Arounds/MVVM/View/ViewControllers/ChatList/ChatListVC.swift"
-            timestampString = "554554698.305318"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "fromNotificationChatID"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Arounds/MVVM/View/ViewControllers/Chat/Base/BaseChatViewController.swift"
-            timestampString = "554759543.434368"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "228"
-            endingLineNumber = "228"
-            landmarkName = "openCameraSheet()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Arounds/Global/Firebase/Storage+Data.swift"
-            timestampString = "554673554.684862"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "unknown"
-            landmarkType = "0">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static (extension in Arounds):__ObjC.Storage.putData(Foundation.Data, completionBlock: Swift.Optional&lt;(Swift.Optional&lt;Foundation.URL&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()&gt;) -&gt; ()"
-                  moduleName = "Arounds"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/samvelpahlevanyan/Documents/My%20folder/SamvelProject/arounds/Arounds/Global/Firebase/Storage+Data.swift"
-                  timestampString = "554849438.764876"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "17"
-                  endingLineNumber = "17"
-                  offsetFromSymbolStart = "640">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__ObjC.StorageMetadata&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static (extension in Arounds):__ObjC.Storage.putData(Foundation.Data, completionBlock: Swift.Optional&lt;(Swift.Optional&lt;Foundation.URL&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()&gt;) -&gt; ()"
-                  moduleName = "Arounds"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/samvelpahlevanyan/Documents/My%20folder/SamvelProject/arounds/Arounds/Global/Firebase/Storage+Data.swift"
-                  timestampString = "554849438.766932"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "36">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Arounds/Global/Firebase/Storage+Data.swift"
-            timestampString = "554673554.68516"
+            filePath = "Arounds/Global/Firebase/Database+Accept.swift"
+            timestampString = "560712126.2313859"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "18"
             endingLineNumber = "18"
+            landmarkName = "create(by:participantsID:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Arounds/Global/Firebase/Database+Chat.swift"
+            timestampString = "562172496.402451"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "getChat(reciverID:callback:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.String) -&gt; () in closure #1 (__C.FIRDataSnapshot) -&gt; () in static (extension in Arounds):__C.FIRDatabase.Chat.getChat(reciverID: Swift.String, callback: (Swift.Optional&lt;Arounds.ARChat&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Arounds"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/samvelpahlevanyan/Documents/My%20folder/SamvelProject/arounds/Arounds/Global/Firebase/Database+Chat.swift"
+                  timestampString = "562701882.2666841"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Arounds.ARChat&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #2 (Swift.String) -&gt; () in closure #1 (__C.FIRDataSnapshot) -&gt; () in static (extension in Arounds):__C.FIRDatabase.Chat.getChat(reciverID: Swift.String, callback: (Swift.Optional&lt;Arounds.ARChat&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Arounds"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/samvelpahlevanyan/Documents/My%20folder/SamvelProject/arounds/Arounds/Global/Firebase/Database+Chat.swift"
+                  timestampString = "562701882.269896"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "42">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Arounds/Global/Firebase/Database+Chat.swift"
+            timestampString = "562172496.404784"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "getChat(reciverID:callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Arounds/MVVM/ViewModel/Chat/BaseChatViewModel.swift"
+            timestampString = "563218271.425088"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
             landmarkName = "unknown"
             landmarkType = "0">
          </BreakpointContent>
@@ -403,12 +179,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Arounds/Global/Firebase/Storage+Data.swift"
-            timestampString = "554673554.685383"
+            filePath = "Arounds/MVVM/ViewModel/Chat/BaseChatViewModel.swift"
+            timestampString = "563218271.4804161"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
             landmarkName = "unknown"
             landmarkType = "0">
          </BreakpointContent>
@@ -420,11 +196,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Arounds/MVVM/View/ViewControllers/Privacy/PrivacyVC.swift"
-            timestampString = "554741276.637463"
+            timestampString = "560976779.292873"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "textView(_:shouldInteractWith:in:interaction:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -435,13 +211,61 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+            filePath = "Arounds/MVVM/View/ViewControllers/Chat/Base/BaseChatViewController.swift"
+            timestampString = "561846277.068404"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "479"
+            endingLineNumber = "479"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Arounds/MVVM/Model/ARUser.swift"
+            timestampString = "561925874.76478"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "save()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
             filePath = "Arounds/MVVM/View/ViewControllers/Profile/EditVC.swift"
-            timestampString = "554741276.637574"
+            timestampString = "562834632.912594"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "227"
-            endingLineNumber = "227"
-            landmarkName = "errorFields(array:)"
+            startingLineNumber = "262"
+            endingLineNumber = "262"
+            landmarkName = "updateWith(userBuilder:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Arounds/Global/Firebase/Database+Users.swift"
+            timestampString = "562344682.896157"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "users(by:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -451,13 +275,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Arounds/Global/Helpers/ARValidation.swift"
-            timestampString = "554741276.637664"
+            filePath = "Arounds/Global/Firebase/Database+Inbox.swift"
+            timestampString = "562834632.913046"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "validateUpdated(fields:firstName:lastName:nicName:gender:date:aboute:avatar:phone:insta:)"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "update(chat:sender:type:reciver:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -467,13 +291,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Arounds/MVVM/View/ViewControllers/Map/MapVC.swift"
-            timestampString = "554849558.10401"
+            filePath = "Arounds/Global/Firebase/Database+Inbox.swift"
+            timestampString = "562834632.9131221"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "250"
-            endingLineNumber = "250"
-            landmarkName = "shouldRender(as:atZoom:)"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "update(chat:sender:reciver:message:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -483,13 +307,189 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Arounds/MVVM/View/ViewControllers/Map/MapVC.swift"
-            timestampString = "554849558.104339"
+            filePath = "Arounds/Global/Helpers/PushNotification.swift"
+            timestampString = "562572927.737192"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "260"
-            endingLineNumber = "260"
-            landmarkName = "renderer(_:markerFor:)"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "sendNotificationWithBadge(chatRoomId:username:type:handler:badge:sound:reciverToken:body:title:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Arounds/Global/Helpers/PushNotification.swift"
+            timestampString = "562572927.737533"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "sendNotificationWithBadge(chatRoomId:username:type:handler:badge:sound:reciverToken:body:title:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Arounds/MVVM/View/ViewControllers/Profile/EditVC.swift"
+            timestampString = "562834632.913251"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
+            landmarkName = "clickDoneButton(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Arounds/MVVM/View/ViewControllers/Profile/EditVC.swift"
+            timestampString = "562834632.913543"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "199"
+            endingLineNumber = "199"
+            landmarkName = "save(avatarURL:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Arounds.ARUpdateUserBuilder&gt;, Swift.Array&lt;Swift.Int&gt;) -&gt; () in Arounds.EditVC.save(avatarURL: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "Arounds"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/samvelpahlevanyan/Documents/My%20folder/SamvelProject/arounds/Arounds/MVVM/View/ViewControllers/Profile/EditVC.swift"
+                  timestampString = "562701882.343393"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "197"
+                  endingLineNumber = "197"
+                  offsetFromSymbolStart = "2780">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.FIRDataSnapshot) -&gt; () in closure #1 (Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Arounds.ARUpdateUserBuilder&gt;, Swift.Array&lt;Swift.Int&gt;) -&gt; () in Arounds.EditVC.save(avatarURL: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "Arounds"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/samvelpahlevanyan/Documents/My%20folder/SamvelProject/arounds/Arounds/MVVM/View/ViewControllers/Profile/EditVC.swift"
+                  timestampString = "562701882.3463269"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "184"
+                  endingLineNumber = "184"
+                  offsetFromSymbolStart = "68">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Arounds/MVVM/View/Cells/MessageListCell.swift"
+            timestampString = "562344682.897187"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "inbox"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Arounds/MVVM/Model/ARUser.swift"
+            timestampString = "562342932.8764991"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
+            landmarkName = "init(json:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Arounds/Global/Helpers/PushNotification.swift"
+            timestampString = "562572990.85702"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "sendNotificationWithBadge(chatRoomId:username:type:handler:badge:sound:reciverToken:body:title:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Arounds.PushNotification.sendNotificationWithBadge(chatRoomId: Swift.String, username: Swift.String, type: Swift.Int, handler: Swift.String, badge: Swift.Int, sound: Swift.String, reciverToken: Swift.String, body: Swift.String, title: Swift.String) -&gt; ()"
+                  moduleName = "Arounds"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/samvelpahlevanyan/Documents/My%20folder/SamvelProject/arounds/Arounds/Global/Helpers/PushNotification.swift"
+                  timestampString = "562701882.37393"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "922">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Just.HTTPResult) -&gt; () in Arounds.PushNotification.sendNotificationWithBadge(chatRoomId: Swift.String, username: Swift.String, type: Swift.Int, handler: Swift.String, badge: Swift.Int, sound: Swift.String, reciverToken: Swift.String, body: Swift.String, title: Swift.String) -&gt; ()"
+                  moduleName = "Arounds"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/samvelpahlevanyan/Documents/My%20folder/SamvelProject/arounds/Arounds/Global/Helpers/PushNotification.swift"
+                  timestampString = "562701882.377933"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "19">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Arounds/MVVM/View/ViewControllers/Profile/ProfileVC.swift"
+            timestampString = "562588078.020879"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
+            landmarkName = "clickSocial(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
