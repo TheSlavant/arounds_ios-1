@@ -13,6 +13,7 @@ class AppCoordinator {
     static func showHome(fromLogin: Bool = false, window : UIWindow? = UIApplication.shared.keyWindow) {
         let nc = UIViewController.instantiate(from: .Home, identifier: "HomeTabBar")
         
+        
         if fromLogin == true {
             window?.rootViewController?.present(nc, animated: true, completion: nil)
         } else {
