@@ -43,9 +43,6 @@ class ARMakeRadarChat: UIView {
         sharedView.currentFilter = filter
         sharedView.update(by: sharedView.currentFilter)
         sharedView.frame = UIScreen.main.bounds
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            sharedView.distanceSlider.selectedDistance = CGFloat(filter.distance)
-        }
         sharedView.setSelected(button: sharedView.maleButton)
         sharedView.setSelected(button: sharedView.femaleButton)
         sharedView.mapViewModel = mapViewModel
@@ -56,6 +53,9 @@ class ARMakeRadarChat: UIView {
         sharedView.rangeSlider.handleDiameter = 10
         sharedView.rangeSlider.delegate = sharedView
         sharedView.bottomConstraint.constant = UIScreen.main.bounds.height < 600 ? 130 : 20
+        sharedView.distanceSlider.endLessImageVIew.isHidden = true
+        sharedView.distanceSlider.widthConstraint.constant = 35
+        sharedView.distanceSlider.lable5.isHidden = false
         sharedView.layoutIfNeeded()
         
         return sharedView
@@ -69,7 +69,7 @@ class ARMakeRadarChat: UIView {
     
     func listener() {
         distanceSlider.didEndSlide = { [weak self] value in
-            self?.currentFilter.distance = Int(value)
+            self?.currentFilter.distance = value
             self?.getUsers()
         }
     }
@@ -87,6 +87,10 @@ class ARMakeRadarChat: UIView {
                 self.sendButtonEnabled(text: text, users: self.users)
             }
             textView.didClickText?(textView.textView.text)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {[weak self] in
+                self?.distanceSlider.selectedDistance = CGFloat(self?.currentFilter.distance ?? 0)
+            }
+
         }
     }
     

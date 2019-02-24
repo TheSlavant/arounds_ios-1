@@ -34,22 +34,31 @@ extension String {
     }
     
     
-        var glyphCount: Int {
-            
-            let richText = NSAttributedString(string: self)
-            let line = CTLineCreateWithAttributedString(richText)
-            return CTLineGetGlyphCount(line)
-        }
+    var glyphCount: Int {
         
-        var isSingleEmoji: Bool {
-            
-            return glyphCount == 1 && containsEmoji
-        }
+        let richText = NSAttributedString(string: self)
+        let line = CTLineCreateWithAttributedString(richText)
+        return CTLineGetGlyphCount(line)
+    }
+    
+    var isSingleEmoji: Bool {
         
-        var containsEmoji: Bool {
-            
-            return unicodeScalars.contains { $0.isEmoji }
-        }
+        return glyphCount == 1 && containsEmoji
+    }
+    
+    var containsEmoji: Bool {
+        
+        return unicodeScalars.contains { $0.isEmoji }
+    }
+    
+    func trimSpaces() -> String {
+        return trimmingCharacters(in: .whitespacesAndNewlines).replacingOccurrences(of: " ", with: "")
+    }
+    
+    func removedNewLines() -> String {
+        return String(self.map({" \n\t\r".contains($0) ? " " : $0}))
+    }
+    
 }
 
 extension UnicodeScalar {

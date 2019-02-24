@@ -26,22 +26,21 @@ class ARValidation {
         var text = ""
         var intArray = [Int]()
         
-        if firstName.count <= fullnameCount {
+        if firstName.trimSpaces().removedNewLines().count <= fullnameCount || firstName.containsEmoji {
             text.append("Имя должно быть больше - \(fullnameCount) символа")
             intArray.append(1)
             //            return ("Имя должно быть больше \(fullnameCount) символов", nil)
         }
         
-        if lastName.count <= fullnameCount {
+        if lastName.trimSpaces().removedNewLines().count <= fullnameCount || lastName.containsEmoji {
             text.append("\nФамилия должна быть больше - \(fullnameCount) символа")
             intArray.append(2)
             //            return ("Фамилия должно быть больше \(fullnameCount) символов", nil)
         }
         
-        if nicName.count <= nicNameCount {
+        if nicName.trimSpaces().removedNewLines().count <= nicNameCount || nicName.containsEmoji {
             text.append("\nНик профиля должен быть больше - \(nicNameCount) символов")
             intArray.append(3)
-            
             //            return ("Ник профиля должно быть больше \(nicNameCount) символов", nil)
         }
 //        else if ARValidation.matches(for: "^[A-Za-z0-9]+.$", in: nicName).count == 0 {

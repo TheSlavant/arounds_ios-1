@@ -13,13 +13,29 @@ class ARMarker: UIView {
     @IBOutlet weak var shadowView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var borderImageView: UIImageView!
+    var user:ARUser!
     
-    class func loadFromNib(with user: ARUser) -> ARMarker {
-        let instance = UINib.init(nibName: "ARMarker", bundle: nil).instantiate(withOwner: nil, options: nil).first as! ARMarker
-        instance.frame.size = user.id == ARUser.currentUser?.id ?? "" ?  CGSize.init(width: 130, height: 130) : CGSize.init(width: 100, height: 100)
+    class func loadFromNib(with user: ARUser, complition: @escaping (()->Void)) -> ARMarker {
+        let instance = UINib(nibName: "ARMarker", bundle: nil).instantiate(withOwner: nil, options: nil).first as! ARMarker
+        instance.user = user
+        instance.frame.size = user.id == ARUser.currentUser?.id ?? "" ?  CGSize(width: 130, height: 130) : CGSize(width: 100, height: 100)
         
-        instance.imageView.kf.setImage(with: user.getImageURL())
-
+        DispatchQueue.global().async {
+            if let url = user.getImageURL(), let data = try? Data(contentsOf: url) {
+                DispatchQueue.main.async {
+                    instance.imageView.image = UIImage(data: data)
+                    complition()
+                }
+            } else {
+                DispatchQueue.main.async {
+                    complition()
+                }
+            }
+        }
+        //        instance.imageView.kf.setImage(with: user.getImageURL()) { (image, error, cacheType, url) in
+        //
+        //        }
+        
         return instance
     }
     

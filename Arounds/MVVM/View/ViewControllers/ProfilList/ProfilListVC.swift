@@ -23,7 +23,7 @@ class ProfilListVC: UIViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: "ARClusteredUsersCell", bundle: nil), forCellReuseIdentifier: cellIdent)
         showDefoultUsers()
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -33,10 +33,10 @@ class ProfilListVC: UIViewController {
         searchBar.textField.delegate = self
     }
     
-        override var prefersStatusBarHidden: Bool {
+    override var prefersStatusBarHidden: Bool {
         return false
     }
-
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
@@ -45,7 +45,7 @@ class ProfilListVC: UIViewController {
 }
 
 extension ProfilListVC: UITextFieldDelegate {
-   
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         var fullName = (textField.text ?? "").appending(string)
@@ -86,7 +86,7 @@ extension ProfilListVC: UITextFieldDelegate {
         
         return true
     }
-
+    
     func showDefoultUsers() {
         users = [ARUser]()
         Database.Users.users(by: 10) { (defoultUsers) in
@@ -99,7 +99,7 @@ extension ProfilListVC: UITextFieldDelegate {
 }
 
 extension ProfilListVC: UITableViewDelegate, UITableViewDataSource {
-   
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return users.count
     }
@@ -120,7 +120,7 @@ extension ProfilListVC: UITableViewDelegate, UITableViewDataSource {
         vc.viewModel = OtherProfileViewModel.init(with: user)
         self.navigationController?.pushViewController(vc, animated: true)
     }
-
+    
 }
 
 

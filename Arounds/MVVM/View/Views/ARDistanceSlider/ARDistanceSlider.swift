@@ -10,6 +10,9 @@ import UIKit
 
 class ARDistanceSlider: ARBorderedView {
     
+    @IBOutlet weak var widthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var endLessImageVIew: UIImageView!
+    @IBOutlet weak var lable5: UILabel!
     @IBOutlet weak var label1: UILabel!
     @IBOutlet weak var label2: UILabel!
     @IBOutlet weak var label3: UILabel!
@@ -17,23 +20,65 @@ class ARDistanceSlider: ARBorderedView {
     
     var state = 1
     var didEndSlide:((CGFloat)-> Void)?
-
+    var inProgress:Bool = false
     let minDistance = 500   // metters
     let maxDistance = 5000  // metters
+    var lastSelectedDistance: CGFloat = 0
+    var lastTag: Int = 0
     var selectedDistance: CGFloat = 0 {
         didSet {
+            if lastSelectedDistance == selectedDistance {return}
+            lastSelectedDistance = selectedDistance
+            layoutIfNeeded()
             if selectedDistance == 500 {
-                slide(as: 1)
+                slide(as: 1, notify: false)
             } else if selectedDistance == 1000 {
-                slide(as: 2)
+                slide(as: 2, notify: false)
             } else if selectedDistance == 2000 {
-                slide(as: 3)
+                slide(as: 3, notify: false)
             } else if selectedDistance == 5000 {
-                slide(as: 4)
+                slide(as: 4, notify: false)
+            } else if selectedDistance == 5000000 {
+                slide(as: 5, notify: false)
             }
 //            setConstraint(constant: (value * selectedDistance))
         }
     }    // in metters
+    
+    func indexToRadius(index:Int) -> CGFloat {
+        switch index {
+        case 1:
+            return 500
+        case 2:
+            return 1000
+        case 3:
+            return 2000
+        case 4:
+            return 5000
+        case 5:
+            return 5000000
+        default:
+            return 0
+        }
+    }
+    
+    func radiusToIndex(redius:Int) -> Int {
+        switch redius {
+        case 500:
+            return 1
+        case 1000:
+            return 2
+        case 2000:
+            return 3
+        case 5000:
+            return 4
+        case 5000000:
+            return 5
+        default:
+            return 0
+        }
+    }
+
     
     var maxViewWidth: CGFloat {
         get {
@@ -99,18 +144,6 @@ class ARDistanceSlider: ARBorderedView {
         }
     }
     
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        lastPoint = nil
-//
-//        if selectableViewleftConstraint.constant >= (maxViewWidth - (tambView.frame.width + 20)) {
-//            selectedDistance = CGFloat(maxDistance)
-//            return
-//        }
-//        selectedDistance = (selectableViewleftConstraint.constant * value) + CGFloat(minDistance)
-
-    }
-    
     @IBAction func didClickButton(_ sender: UIButton) {
         slide(as: sender.tag)
     }
@@ -127,32 +160,47 @@ class ARDistanceSlider: ARBorderedView {
         slide(as: state)
     }
     
-    func slide(as tag: Int) {
-        
+    func slide(as tag: Int, notify: Bool = true) {
+        if inProgress {return}
+        if lastTag == tag {return}
+
         var value:CGFloat = 0
+        var radius:CGFloat = 0
         switch tag {
         case 1:
             value = 0
-            self.didEndSlide?(CGFloat(500))
+            radius = CGFloat(500)
             break
         case 2:
             value = label2.centureOfX() - ((tambView.frame.width/2) + 20)
-            self.didEndSlide?(CGFloat(1000))
+            radius = CGFloat(1000)
             break
         case 3:
             value = label3.centureOfX() - ((tambView.frame.width/2) + 20)
-            self.didEndSlide?(CGFloat(2000))
+            radius = CGFloat(2000)
             break
         case 4:
+            value = label4.centureOfX() - ((tambView.frame.width/2) + 20)
+            radius = CGFloat(5000)
+            break
+        case 5:
             value = maxViewWidth - tambView.frame.width
-            self.didEndSlide?(CGFloat(5000))
+            radius = CGFloat(1500000)
             break
         default: break
-            
+        }
+        lastTag = tag
+        if notify {
+            inProgress = true
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) { [weak self] in
+                self?.inProgress = false
+            }
+            self.didEndSlide?(radius)
         }
         state = tag
         setConstraint(constant: value)
         
+
     }
     
 }

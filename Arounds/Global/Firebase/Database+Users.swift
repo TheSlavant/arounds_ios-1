@@ -66,7 +66,7 @@ extension Database {
         static func users(by arrayUser:[(String, CLLocation)], completion handler:(([ARUser])->Void)?) {
             let block = ARProfileBlock.rebase()
             let userID = arrayUser.map({$0.0})
-            let contactRef = database.child("users")
+            let contactRef = database.child("users").queryOrdered(byChild: "isUpdated").queryEqual(toValue: true)
             
             contactRef.observeSingleEvent(of: .value) { (snapshot) in
                 
@@ -82,7 +82,7 @@ extension Database {
                     //
                     var user = ARUser()
                     if let userDict = arg.value as? [String: Any], let location = arrayUser.filter({$0.0 == arg.key}).first?.1 {
-                        user = ARUser.init(with: userDict)
+                        user = ARUser(with: userDict)
                         user.id = arg.key
                         user.coordinate = ARCoordinate(lat: location.coordinate.latitude, lng: location.coordinate.longitude)
                         return user
@@ -91,7 +91,6 @@ extension Database {
                     return user
                 })
                 
-                print(maped)
                 handler?(maped)
             }
         }
@@ -131,21 +130,40 @@ extension Database {
         }
         
         static func users(by limit: UInt, complition handler:(([ARUser])->Void)?) {
-            let ref = database.child("users").queryLimited(toLast: 50 + 1)
+            let ref = database.child("users").queryOrdered(byChild: "isUpdated").queryEqual(toValue: true)
             
             ref.observeSingleEvent(of: .value) { (snapshot) in
                 let postDict = snapshot.value as? [String : [String: Any]] ?? [:]
                 
                 let maped = postDict.map({ (arg) -> ARUser in
-                    let user = ARUser.init(with: arg.value)
+                    let user = ARUser(with: arg.value)
                     user.id = arg.key
                     return user
-                })
+                }).filter({$0.isBlocked == false})
                 
                 var filtered = maped.filter({$0.id != ARUser.currentUser?.id ?? "" && $0.isUpdated == true && $0.phone != "0000000000104"})
                 filtered.shuffle()
                 if filtered.count > limit {
-                    handler?(Array(filtered[0..<10]))
+                    var array:[ARUser] = [ARUser]()
+                    let male = filtered.filter({$0.gender == .male})
+                    let female = filtered.filter({$0.gender == .female})
+                    if male.count >= 5 {
+                        array.append(contentsOf: male[0..<5])
+                    } else {
+                        array.append(contentsOf: male)
+                    }
+                    if female.count >= 5 {
+                        array.append(contentsOf: female[0..<5])
+                    } else {
+                        array.append(contentsOf: female)
+                    }
+                    if array.count < 10 {
+                        array.append(contentsOf: filtered.filter({ (user) -> Bool in
+                            return !array.contains(where: {$0.id == user.id})
+                        })[0...((10-array.count)-1)])
+                    }
+
+                    handler?(Array(array).shuffled())
                     return
                 }
                 handler?(filtered)

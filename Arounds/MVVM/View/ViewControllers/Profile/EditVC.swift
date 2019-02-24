@@ -261,9 +261,9 @@ class EditVC: UIViewController {
         SVProgressHUD.dismiss {
             ARUser.currentUser?.avatarBase64 = userBuilder.avatarBase64
             ARUser.currentUser?.isUpdated = true
-            ARUser.currentUser?.nickName = nick
-            ARUser.currentUser?.firstName = self.firstNameTextField.text
-            ARUser.currentUser?.lastName = self.lastNameTextField.text
+            ARUser.currentUser?.nickName = nick.trimSpaces().removedNewLines()
+            ARUser.currentUser?.firstName = self.firstNameTextField.text?.trimSpaces().removedNewLines()
+            ARUser.currentUser?.lastName = self.lastNameTextField.text?.trimSpaces().removedNewLines()
             ARUser.currentUser?.birtDay = self.selectedDate
             ARUser.currentUser?.gender =  UserGender.init(rawValue: self.genderControll.selected) ?? .male
             ARUser.currentUser?.aboute = userBuilder.aboute

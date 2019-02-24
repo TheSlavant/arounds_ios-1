@@ -34,8 +34,6 @@ extension Database {
 
                     var set = Set.init(blockList)
                     set.insert(ARUser.currentUser?.id ?? "")
-                    
-                    
                     database.child(kProfile_block).child(userDict.key).updateChildValues(["blockCount" : blockCount + 1])
                     database.child(kProfile_block).child(userDict.key).updateChildValues(["blockList" : Array.init(set)])
                     

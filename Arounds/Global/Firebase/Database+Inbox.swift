@@ -86,8 +86,7 @@ extension Database {
         
         static func inboxes(callback: @escaping (([ARInbox]) -> Void)) {
             let ref = database.child(kUser_inbox)
-            
-            ref.observe(.value) { (snapshot) in
+            ref.observeSingleEvent(of: .value) { (snapshot) in
                 if snapshot.exists(), let value = snapshot.value as? [String: [String: Any]] {
                     let dict = value.filter({(($0.value["participans"] as? [String])?.contains(ARUser.currentUser?.id ?? "")) ?? false})
                     callback(dict.map({ARInbox(with: $0.value, inboxId: $0.key)}))

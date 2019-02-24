@@ -1759,7 +1759,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Arounds/Pods-Arounds-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Arounds/Pods-Arounds-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/CropViewController/CropViewController.framework",
@@ -1808,7 +1808,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Arounds/Pods-Arounds-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Arounds/Pods-Arounds-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		760E09545295B38D404A968F /* [CP] Check Pods Manifest.lock */ = {
@@ -1835,7 +1835,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Arounds/Pods-Arounds-resources.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Arounds/Pods-Arounds-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 			);
@@ -1846,7 +1846,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Arounds/Pods-Arounds-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Arounds/Pods-Arounds-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D0D7C0FD20DB898A002C15C1 /* ShellScript */ = {

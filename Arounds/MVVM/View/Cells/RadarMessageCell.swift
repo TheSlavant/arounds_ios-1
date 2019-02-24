@@ -36,26 +36,6 @@ class RadarMessageCell: UITableViewCell {
         didSet{
             textLable.text = message.text
             
-            //            let formatter = DateFormatter()
-            //            formatter.dateFormat = "MM/dd/yyyy"
-            
-            //            dateLabel.text = formatter.string(from: message.date)
-            
-            //            var dateDesc = ""
-            //            let formatter = DateFormatter()
-            //            if let date = message.date {
-            //                if NSCalendar.current.isDateInToday(date) {
-            //                    formatter.dateFormat = "HH:mm"
-            //                    dateDesc = "Сегодня, \(formatter.string(from: date))"
-            //                } else if NSCalendar.current.isDateInYesterday(date) {
-            //                    formatter.dateFormat = "HH:mm"
-            //                    dateDesc = "Вчера, \(formatter.string(from: date))"
-            //                } else {
-            //                    formatter.dateFormat = "MM.dd.yyyy"
-            //                    dateDesc = formatter.string(from: date)
-            //                }
-            //            }
-            
             dateLabel.text = getFormattedDate(for: message.date) ?? ""
             
             Database.Users.user(userID: message.senderID) { (newUser) in

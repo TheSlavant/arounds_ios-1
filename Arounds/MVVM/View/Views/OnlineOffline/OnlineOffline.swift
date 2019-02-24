@@ -13,6 +13,8 @@ class OnlineOffline: UIView {
     @IBOutlet weak var animationConsrataint: NSLayoutConstraint!
     @IBOutlet weak var animationImage: UIImageView!
     @IBOutlet weak var licationIcon: UIImageView!
+    @IBOutlet weak var tapButton: UIButton!
+
     var didSwitchOnline: ((Bool) -> Void)?
 
     var isOnline: Bool = true {
@@ -51,7 +53,11 @@ class OnlineOffline: UIView {
         self.layer.removeAllAnimations()
     }
 
-    @IBAction func didClickButton(_ sender: Any) {
+    @IBAction func didClickButton(_ sender: UIButton) {
+        self.tapButton.isEnabled = false
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            self.tapButton.isEnabled = true
+        }
         isOnline = !isOnline
     }
     

@@ -18,7 +18,6 @@ class MapViewModel: MapViewModeling {
                 guard let weakSelf = self else {
                     handler?([ARUser]())
                     return
-                    
                 }
                 weakSelf.nearestUser = weakSelf.filtered(users: users, filter: filter)
                 handler?(weakSelf.nearestUser)
@@ -26,7 +25,7 @@ class MapViewModel: MapViewModeling {
         }
     }
     
-    func nearestUser(radius: Int, completion handler:(([(String , CLLocation)])->Void)?)  {
+    func nearestUser(radius: CGFloat, completion handler:(([(String , CLLocation)])->Void)?)  {
         if let userID = ARUser.currentUser?.id, let location = ARUser.currentUser?.coordinate {
             Database.GeoLocation.users(in: location, radius: radius, userID: userID) { (users) in
                 handler?(users)

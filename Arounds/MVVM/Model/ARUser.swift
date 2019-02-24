@@ -39,6 +39,7 @@ class ARUser:NSObject, NSCoding {
     var coordinate: ARCoordinate?
     var lastOnlone: Date?
     var DCS: String?
+    var isBlocked:Bool = false
     
     private static var _currentUser:ARUser?
     
@@ -120,7 +121,7 @@ class ARUser:NSObject, NSCoding {
         if let dateInterval = dic["lastOnlone"] as? Double {
             self.lastOnlone = Date.init(timeIntervalSince1970: dateInterval / 1000)
         }
-
+        self.isBlocked = (dic["isBlocked"] as? Bool) ?? false
         self.aboute = dic["aboute"] as? String
         self.avatarBase64 = dic["avatar"] as? String
         self.age = dic["age"] as? Int

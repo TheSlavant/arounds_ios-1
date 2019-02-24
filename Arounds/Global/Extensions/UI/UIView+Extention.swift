@@ -11,12 +11,10 @@ import UIKit
 extension UIView {
     
     func toImage() -> UIImage? {
-//        UIGraphicsBeginImageContextWithOptions(CGSize.init(width: 100, height: 100), false, 0)
         let renderer = UIGraphicsImageRenderer(size: bounds.size)
         let image = renderer.image { ctx in
             drawHierarchy(in: bounds, afterScreenUpdates: true)
         }
-
         return image
     }
     

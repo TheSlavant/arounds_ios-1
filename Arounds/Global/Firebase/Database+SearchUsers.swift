@@ -28,7 +28,6 @@ extension Database {
                 postDict = postDict.filter({ (obj) -> Bool in
                     return  ((obj.value["firstName"] as? String ?? "").lowercased().hasPrefix(firstName.lowercased()) || (obj.value["lastName"] as? String ?? "").lowercased().hasPrefix(firstName.lowercased()) ||
                     (obj.value["nickname"] as? String ?? "").lowercased().hasPrefix(firstName.lowercased()))
-                    
                 })
                 
                 if let lastName = lastName {
@@ -41,10 +40,11 @@ extension Database {
                 let withouthBlockers = postDict.filter({block.blockList.contains($0.key) != true})
                 
                 let maped = withouthBlockers.map({ (arg) -> ARUser in
-                    let user = ARUser.init(with: arg.value)
+                    let user = ARUser(with: arg.value)
                     user.id = arg.key
                     return user
-                })
+                }).filter({$0.isBlocked == false})
+                
                 handler?(maped.filter({$0.id ?? "" != ARUser.currentUser?.id ?? "" && $0.isUpdated == true && $0.phone != "0000000000104"}))
 
             }

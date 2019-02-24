@@ -9,7 +9,7 @@
 import Foundation
 
 class ARUserFilter {
-    var distance: Int = 2000 //
+    var distance: CGFloat = 2000 //
     var male: Bool = true
     var female: Bool = true
     var ageStart: Int = 14

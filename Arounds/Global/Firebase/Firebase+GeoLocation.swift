@@ -21,7 +21,7 @@ extension Database {
             geoFire.setLocation(CLLocation(latitude: isOnline ? location.lat : 0, longitude: isOnline ? location.lng : 0), forKey: userID)
         }
         
-        static func users(in location:ARCoordinate, radius:Int, userID: String, completion handler:(([(key: String, location: CLLocation)])->Void)?) {
+        static func users(in location:ARCoordinate, radius:CGFloat, userID: String, completion handler:(([(key: String, location: CLLocation)])->Void)?) {
             let geofireRef = database.child(locations)
             let geoFire = GeoFire(firebaseRef: geofireRef)
             let center = CLLocation(latitude: location.lat, longitude: location.lng)
